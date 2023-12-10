@@ -15,9 +15,9 @@ struct Categories {
 let categories: [Categories] = [
     Categories(categoryName: "PC", categoryImage: "cat1"),
     Categories(categoryName: "Phone", categoryImage: "cat2"),
-    Categories(categoryName: "Head Phone", categoryImage: "cat3"),
+    Categories(categoryName: "Earphone", categoryImage: "cat3"),
     Categories(categoryName: "Gaming", categoryImage: "cat4"),
-    Categories(categoryName: "all", categoryImage: "cat5")
+    Categories(categoryName: "All", categoryImage: "cat5")
 ]
 
 struct ProductsDTORequest : Encodable {

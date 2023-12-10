@@ -20,10 +20,15 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     func setup(category: Categories) {
         categoryName.text = category.categoryName
         categoryImage.image = UIImage(named: category.categoryImage)
+        categoryImage.layer.cornerRadius = 10
+        categoryImage.layer.masksToBounds = true
     }
     
     override func layoutSubviews() {
-        categoryImage.round()
+//        categoryImage.layer.cornerRadius = 5.0
+        
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+
     }
 
 }

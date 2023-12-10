@@ -27,7 +27,8 @@ class ProductsRouter : ProductsRouterProtocol {
     }
     
     func routeToProductDetail() {
-        
+        let productDetailVC = ProductDetailViewController(nibName: "ProductDetailViewController", bundle: nil)
+        view?.navigationController?.pushViewController(productDetailVC, animated: true)
     }
     
 }

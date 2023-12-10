@@ -9,7 +9,7 @@ import UIKit
 
 class AuthenticationViewController: UIViewController, AuthenticationViewControllerProtocol {
 
-    
+
     // MARK: Outlets
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -20,10 +20,10 @@ class AuthenticationViewController: UIViewController, AuthenticationViewControll
     @IBOutlet weak var signInEmail: UITextField!
     @IBOutlet weak var signIn: UIButton!
 
-    
+
     // MARK: Properties
-    public var presenter: AuthenticationPresenterProtocol?
-    private var activityIndicatorView: UIActivityIndicatorView?
+    var presenter: AuthenticationPresenterProtocol?
+    var activityIndicatorView: UIActivityIndicatorView?
 
 
     // MARK: - View Functions
@@ -50,7 +50,6 @@ class AuthenticationViewController: UIViewController, AuthenticationViewControll
         activityIndicatorView = UIActivityIndicatorView(style: .large)
         activityIndicatorView!.center = CGPoint(x: view.frame.size.width  / 2, y: 0)
         view.addSubview(activityIndicatorView!)
-        presenter?.routeToMain()
     }
 
     
@@ -85,6 +84,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewControll
 
 // MARK: - Functions
 extension AuthenticationViewController {
+    
     func userCreated() {
         self.activityIndicatorView!.stopAnimating()
         self.presenter?.routeToMain()

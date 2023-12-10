@@ -22,7 +22,7 @@ class ProductsPresenter : ProductsPresenterProtocol {
     }
     
     func routeToProductDetail() {
-        
+        router?.routeToProductDetail()
     }
     
     func fetchProducts() {

@@ -9,6 +9,8 @@ import UIKit
 
 class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
 
+
+    // MARK: Outlets
     @IBOutlet weak var welcomeTxt: UILabel!
     @IBOutlet weak var userInformation: UILabel!
     @IBOutlet weak var basketPrice: UILabel!
@@ -17,44 +19,52 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var productsCollectionView: UICollectionView!
 
+
+    // MARK: Properties
     var presenter: ProductsPresenterProtocol?
     var products: ProductsDTO?
-    
-    private var numberOfItemsInRow = 2
 
-    private var minimumSpacing = 5
-
-    private var edgeInsetPadding = 10
-    
     var scrollview : UIScrollView = {
         let scrollview = UIScrollView()
         scrollview.translatesAutoresizingMaskIntoConstraints = false
         scrollview.backgroundColor = .clear
         return scrollview
     }()
-    
+
+
+    // MARK: - View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         ProductsRouter.createModule(vc: self)
-
-        let categoryNib = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil)
-        let productsNib = UINib(nibName: "ProductsCell", bundle: nil)
-
-        self.categoriesCollectionView.register(categoryNib, forCellWithReuseIdentifier: "categoriesCell")
-        self.productsCollectionView.register(productsNib, forCellWithReuseIdentifier: "productsCell")
         
-        categoriesCollectionView.dataSource = self
-        categoriesCollectionView.delegate = self
-        productsCollectionView.dataSource = self
-        productsCollectionView.delegate = self
-        setupScrollView()
-        presenter?.fetchProducts()
+        setupUI()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         self.navigationItem.setHidesBackButton(true, animated: true)
         navigationController?.navigationBar.isHidden = false
     }
+
+    private func setupUI() {
+        let categoryNib = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil)
+        let productsNib = UINib(nibName: "ProductsCell", bundle: nil)
+        
+        self.categoriesCollectionView.register(categoryNib, forCellWithReuseIdentifier: "categoriesCell")
+        self.productsCollectionView.register(productsNib, forCellWithReuseIdentifier: "productsCell")
+        
+        categoriesCollectionView.dataSource = self
+        categoriesCollectionView.delegate = self
+        
+        productsCollectionView.dataSource = self
+        productsCollectionView.delegate = self
+        
+        presenter?.fetchProducts()
+    }
+
+}
+
+// MARK: - Functions
+extension ProductsViewController {
     
     func fetchedProductsSuccesfully(response: ProductsDTO) {
         self.products = response
@@ -64,7 +74,7 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
     }
     
     func fetchedProductsFailed() {
-        
+        showMessage("Error!", title: "Error Occured")
     }
     
 }
@@ -107,52 +117,26 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
             
             return CGSize(width: collectionViewWidth, height: collectionViewHeight)
         } else {
-            return CGSize(width: 60, height: 100)
+            return CGSize(width: 80, height: 120)
         }
     }
     
-}
-
-
-extension ProductsViewController : UIScrollViewDelegate {
-    
-    func setupScrollView() {
-        scrollview.delegate = self
-        view.addSubview(scrollview)
+    private func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForItemAt indexPath: IndexPath) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 10) //
     }
-}
-
-class SecondViewController: UIViewController {
-    let label = createLabel(str: "Settings Page")
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .purple
-        title = "Settings"
-        view.addSubview(label)
-        label.center = view.center
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == productsCollectionView {
+
+            if let selectedProductID = products?[indexPath.row].id {
+                
+                let productDetailVC = ProductDetailViewController()
+                productDetailVC.productID = selectedProductID
+                navigationController?.pushViewController(productDetailVC, animated: true)
+            }
+        } else {
+            // MARK: TODO
+        }
     }
-}
-
-class ThirdViewController: UIViewController {
     
-    let label = createLabel(str: "About Page")
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .orange
-        title = "About"
-        view.addSubview(label)
-        label.center = view.center
-    }
-}
-
-
-func createLabel(str : String) -> UILabel {
-    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
-    label.text = "\(str)"
-    label.font = UIFont(name: label.font.familyName, size: 50)
-    label.textAlignment = .center
-    label.textColor = .white
-    return label
 }

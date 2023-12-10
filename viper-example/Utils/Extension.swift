@@ -18,3 +18,14 @@ extension UIView {
     }
 }
 
+extension Int {
+    func toString() -> String {
+        return String(self)
+    }
+}
+
+extension Double {
+    func toString() -> String {
+        return String(self)
+    }
+}
