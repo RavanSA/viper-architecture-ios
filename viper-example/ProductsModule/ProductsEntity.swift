@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import CoreData
 
+// MARK: UI Model
 struct Categories {
     let categoryName: String
     let categoryImage: String
@@ -20,12 +22,12 @@ let categories: [Categories] = [
     Categories(categoryName: "All", categoryImage: "cat5")
 ]
 
+
+// MARK: DTO
 struct ProductsDTORequest : Encodable {
     
 }
 
-
-// MARK: - ProductsDTOElement
 struct ProductsDTOElement: Codable {
     let id: Int
     let title: String
@@ -43,10 +45,33 @@ enum Category: String, Codable {
     case womenSClothing = "women's clothing"
 }
 
-// MARK: - Rating
 struct Rating: Codable {
     let rate: Double
     let count: Int
 }
 
 typealias ProductsDTO = [ProductsDTOElement]
+
+
+//// MARK: CoreData Entity
+//@objc(Products)
+//public class ProductsManagedObject: NSManagedObject {
+//
+//}
+
+//extension ProductsManagedObject {
+//
+//    @nonobjc public class func fetchRequest() -> NSFetchRequest<ProductsManagedObject> {
+//        return NSFetchRequest<ProductsManagedObject>(entityName: "Products")
+//    }
+//
+//    @NSManaged public var category: String?
+//    @NSManaged public var id: Int64
+//    @NSManaged public var image: String?
+//    @NSManaged public var price: Double
+//    @NSManaged public var productDescription: String?
+//    @NSManaged public var rate: String?
+//    @NSManaged public var rateCount: Int64
+//    @NSManaged public var title: String?
+//
+//}

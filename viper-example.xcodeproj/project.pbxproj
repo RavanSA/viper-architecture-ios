@@ -36,11 +36,13 @@
 		C96E8C892B24CD2500EFBCEF /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96E8C872B24CD2500EFBCEF /* ProductDetailViewController.xib */; };
 		C96E8C8C2B260B1300EFBCEF /* BottomBarTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E8C8B2B260B1300EFBCEF /* BottomBarTemp.swift */; };
 		C973C1DE2B0F723B0060B6CE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C973C1DD2B0F723B0060B6CE /* Extension.swift */; };
+		C989421B2B65865700166DEF /* ProductsEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98942192B65865700166DEF /* ProductsEntity+CoreDataClass.swift */; };
+		C989421C2B65865700166DEF /* ProductsEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989421A2B65865700166DEF /* ProductsEntity+CoreDataProperties.swift */; };
 		C98F99832A9E78A300ADDE12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F99822A9E78A300ADDE12 /* AppDelegate.swift */; };
 		C98F99852A9E78A300ADDE12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F99842A9E78A300ADDE12 /* SceneDelegate.swift */; };
 		C98F99872A9E78A300ADDE12 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F99862A9E78A300ADDE12 /* OnBoardingView.swift */; };
 		C98F998A2A9E78A300ADDE12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C98F99882A9E78A300ADDE12 /* Main.storyboard */; };
-		C98F998D2A9E78A300ADDE12 /* viper_example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C98F998B2A9E78A300ADDE12 /* viper_example.xcdatamodeld */; };
+		C98F998D2A9E78A300ADDE12 /* ViperExampleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C98F998B2A9E78A300ADDE12 /* ViperExampleApp.xcdatamodeld */; };
 		C98F998F2A9E78A400ADDE12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C98F998E2A9E78A400ADDE12 /* Assets.xcassets */; };
 		C98F99922A9E78A400ADDE12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C98F99902A9E78A400ADDE12 /* LaunchScreen.storyboard */; };
 		C98F999D2A9E78A500ADDE12 /* viper_exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F999C2A9E78A500ADDE12 /* viper_exampleTests.swift */; };
@@ -48,6 +50,8 @@
 		C98F99A92A9E78A500ADDE12 /* viper_exampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F99A82A9E78A500ADDE12 /* viper_exampleUITestsLaunchTests.swift */; };
 		C99773E72ABF282300DBE07F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C99773E62ABF282300DBE07F /* GoogleService-Info.plist */; };
 		C99773EA2ABF346100DBE07F /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99773E92ABF346100DBE07F /* ErrorManager.swift */; };
+		C9C5F47D2B5D83A90058FEAF /* PersistentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5F47C2B5D83A90058FEAF /* PersistentController.swift */; };
+		C9C5F47F2B5D85460058FEAF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5F47E2B5D85460058FEAF /* String.swift */; };
 		C9CF38752B0DE6460055E7EA /* ProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF38742B0DE6460055E7EA /* ProductsCell.swift */; };
 		C9CF38772B0DE8020055E7EA /* ProductsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CF38762B0DE8020055E7EA /* ProductsCell.xib */; };
 		C9F09B392AF81A5F007EFA8D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F09B382AF81A5F007EFA8D /* Constant.swift */; };
@@ -105,6 +109,8 @@
 		C96E8C872B24CD2500EFBCEF /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
 		C96E8C8B2B260B1300EFBCEF /* BottomBarTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarTemp.swift; sourceTree = "<group>"; };
 		C973C1DD2B0F723B0060B6CE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		C98942192B65865700166DEF /* ProductsEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductsEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C989421A2B65865700166DEF /* ProductsEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductsEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C98F997F2A9E78A300ADDE12 /* viper-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "viper-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98F99822A9E78A300ADDE12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C98F99842A9E78A300ADDE12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +127,8 @@
 		C98F99A82A9E78A500ADDE12 /* viper_exampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viper_exampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C99773E62ABF282300DBE07F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C99773E92ABF346100DBE07F /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		C9C5F47C2B5D83A90058FEAF /* PersistentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentController.swift; sourceTree = "<group>"; };
+		C9C5F47E2B5D85460058FEAF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C9CF38742B0DE6460055E7EA /* ProductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCell.swift; sourceTree = "<group>"; };
 		C9CF38762B0DE8020055E7EA /* ProductsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsCell.xib; sourceTree = "<group>"; };
 		C9F09B382AF81A5F007EFA8D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -171,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				C919A20B2AA3896E00BCF7F5 /* UIScrollView.swift */,
+				C9C5F47E2B5D85460058FEAF /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -191,6 +200,7 @@
 		C94B047D2AEC43BF00DF2D60 /* ProductsModule */ = {
 			isa = PBXGroup;
 			children = (
+				C9F63D692B6584DB00F3C54E /* CoreData */,
 				C94B048C2AEE904100DF2D60 /* View */,
 				C94B047E2AEC440A00DF2D60 /* ProductsViewController.swift */,
 				C94B04822AEC442A00DF2D60 /* ProductsPresenter.swift */,
@@ -281,7 +291,7 @@
 				C98F998E2A9E78A400ADDE12 /* Assets.xcassets */,
 				C98F99902A9E78A400ADDE12 /* LaunchScreen.storyboard */,
 				C98F99932A9E78A400ADDE12 /* Info.plist */,
-				C98F998B2A9E78A300ADDE12 /* viper_example.xcdatamodeld */,
+				C98F998B2A9E78A300ADDE12 /* ViperExampleApp.xcdatamodeld */,
 			);
 			path = "viper-example";
 			sourceTree = "<group>";
@@ -320,6 +330,7 @@
 				C9594B702B01415900624E79 /* JSONManager.swift */,
 				C973C1DD2B0F723B0060B6CE /* Extension.swift */,
 				C96E8C8B2B260B1300EFBCEF /* BottomBarTemp.swift */,
+				C9C5F47C2B5D83A90058FEAF /* PersistentController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -331,6 +342,15 @@
 				C9CF38762B0DE8020055E7EA /* ProductsCell.xib */,
 			);
 			path = ProductsCell;
+			sourceTree = "<group>";
+		};
+		C9F63D692B6584DB00F3C54E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C98942192B65865700166DEF /* ProductsEntity+CoreDataClass.swift */,
+				C989421A2B65865700166DEF /* ProductsEntity+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		E3622FC120EA449747BC269E /* Pods */ = {
@@ -601,7 +621,9 @@
 				C98F99872A9E78A300ADDE12 /* OnBoardingView.swift in Sources */,
 				C94B04872AEC445600DF2D60 /* ProductsRouter.swift in Sources */,
 				C94B04802AEC440A00DF2D60 /* ProductsViewController.swift in Sources */,
+				C989421C2B65865700166DEF /* ProductsEntity+CoreDataProperties.swift in Sources */,
 				C96E8C852B24CCE900EFBCEF /* ProductDetailEntity.swift in Sources */,
+				C9C5F47F2B5D85460058FEAF /* String.swift in Sources */,
 				C98F99832A9E78A300ADDE12 /* AppDelegate.swift in Sources */,
 				C96E8C812B24CCB600EFBCEF /* ProductDetailRouter.swift in Sources */,
 				C9F09B392AF81A5F007EFA8D /* Constant.swift in Sources */,
@@ -609,8 +631,10 @@
 				C94B04852AEC443E00DF2D60 /* ProductsInteractor.swift in Sources */,
 				C98F99852A9E78A300ADDE12 /* SceneDelegate.swift in Sources */,
 				C96E8C882B24CD2500EFBCEF /* ProductDetailViewController.swift in Sources */,
+				C989421B2B65865700166DEF /* ProductsEntity+CoreDataClass.swift in Sources */,
 				C919A2172AA3E27000BCF7F5 /* AuthenticationViewController.swift in Sources */,
 				C973C1DE2B0F723B0060B6CE /* Extension.swift in Sources */,
+				C9C5F47D2B5D83A90058FEAF /* PersistentController.swift in Sources */,
 				C99773EA2ABF346100DBE07F /* ErrorManager.swift in Sources */,
 				C919A2132AA3E22100BCF7F5 /* AuthenticationInteractor.swift in Sources */,
 				C96E8C832B24CCC500EFBCEF /* ProductDetailProtocol.swift in Sources */,
@@ -620,7 +644,7 @@
 				C919A2112AA3E20900BCF7F5 /* AuthenticationPresenter.swift in Sources */,
 				C919A21B2AA4C40800BCF7F5 /* AuthenticationEntity.swift in Sources */,
 				C94B048B2AEC447300DF2D60 /* ProductsEntity.swift in Sources */,
-				C98F998D2A9E78A300ADDE12 /* viper_example.xcdatamodeld in Sources */,
+				C98F998D2A9E78A300ADDE12 /* ViperExampleApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -964,13 +988,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		C98F998B2A9E78A300ADDE12 /* viper_example.xcdatamodeld */ = {
+		C98F998B2A9E78A300ADDE12 /* ViperExampleApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				C98F998C2A9E78A300ADDE12 /* viper_example.xcdatamodel */,
 			);
 			currentVersion = C98F998C2A9E78A300ADDE12 /* viper_example.xcdatamodel */;
-			path = viper_example.xcdatamodeld;
+			path = ViperExampleApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

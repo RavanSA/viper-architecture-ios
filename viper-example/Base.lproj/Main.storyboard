@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qZv-gi-I04">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qZv-gi-I04">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -82,13 +83,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="SIGN IN " textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="HAM-IL-EUe">
-                                <rect key="frame" x="134" y="133" width="154" height="42.333333333333343"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sign In" textAlignment="center" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="HAM-IL-EUe">
+                                <rect key="frame" x="134" y="133" width="82" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jLN-rz-gyY">
-                                <rect key="frame" x="16" y="206.33333333333334" width="361" height="51.000000000000028"/>
+                                <rect key="frame" x="16" y="198" width="289" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="HJL-Vb-5Pd"/>
                                 </constraints>
@@ -96,22 +97,25 @@
                                     <segment title="LOGIN"/>
                                     <segment title="REGISTRATION"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onSegmentChange:" destination="yoV-6x-bRW" eventType="valueChanged" id="AEm-Rc-0s4"/>
+                                </connections>
                             </segmentedControl>
                             <scrollView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcL-zw-vsU">
-                                <rect key="frame" x="16" y="256.33333333333326" width="361" height="507.66666666666674"/>
+                                <rect key="frame" x="16" y="248" width="289" height="516"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-cD-tuf" userLabel="Login">
-                                        <rect key="frame" x="8" y="8" width="337" height="491.66666666666669"/>
+                                        <rect key="frame" x="8" y="8" width="337" height="500"/>
                                         <subviews>
-                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="SIGN IN " minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="6yU-JP-yDk">
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sign In" minimumFontSize="22" sizingRule="oversize" translatesAutoresizingMaskIntoConstraints="NO" id="6yU-JP-yDk">
                                                 <rect key="frame" x="17" y="15" width="131" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="131" id="xhB-3I-DLB"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" spellCheckingType="no" smartDashesType="no"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Be-9h-12j">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Be-9h-12j">
                                                 <rect key="frame" x="25" y="90" width="293" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="C27-oX-KMa"/>
@@ -119,7 +123,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zaX-By-7zp">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="  Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zaX-By-7zp">
                                                 <rect key="frame" x="25" y="167" width="293" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="AhS-1k-TVI"/>
@@ -127,15 +131,17 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Forget Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zty-kS-YkH">
-                                                <rect key="frame" x="182" y="225.66666666666669" width="136" height="34"/>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Forget Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zty-kS-YkH">
+                                                <rect key="frame" x="182" y="234" width="136" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sa-aG-LsM">
-                                                <rect key="frame" x="25" y="274.66666666666669" width="293" height="35"/>
+                                                <rect key="frame" x="25" y="283" width="293" height="35"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="SIGN IN"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="SIGN IN">
+                                                    <color key="baseBackgroundColor" systemColor="labelColor"/>
+                                                </buttonConfiguration>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -157,47 +163,52 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUX-Ev-lP3" userLabel="Registration">
-                                        <rect key="frame" x="345" y="8" width="337" height="491.66666666666669"/>
+                                        <rect key="frame" x="345" y="8" width="337" height="500"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1lj-cD-ACH">
-                                                <rect key="frame" x="18" y="69" width="301" height="40"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1lj-cD-ACH">
+                                                <rect key="frame" x="18" y="61" width="301" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="d04-Xo-Edg"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WBz-oL-YSg">
-                                                <rect key="frame" x="18" y="130" width="301" height="40"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="  Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WBz-oL-YSg">
+                                                <rect key="frame" x="18" y="122" width="301" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="w4y-iy-uPr"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ob1-nc-Tbi">
-                                                <rect key="frame" x="18" y="263.00000000000006" width="301" height="40"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ob1-nc-Tbi">
+                                                <rect key="frame" x="18" y="255" width="301" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="cud-tz-YvK"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="REGISTRATION" borderStyle="roundedRect" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="xYN-H1-CPD">
-                                                <rect key="frame" x="18" y="20" width="218" height="41"/>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="REGISTRATION" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="xYN-H1-CPD">
+                                                <rect key="frame" x="18" y="20" width="218" height="33"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                </accessibility>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kV-lc-ZWr">
-                                                <rect key="frame" x="18" y="340.00000000000006" width="301" height="40"/>
+                                                <rect key="frame" x="18" y="332" width="301" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="KWA-FD-fl6"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Register"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Register">
+                                                    <color key="baseBackgroundColor" systemColor="labelColor"/>
+                                                </buttonConfiguration>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="66x-qh-go8">
-                                                <rect key="frame" x="18" y="200" width="301" height="40"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="66x-qh-go8">
+                                                <rect key="frame" x="18" y="192" width="301" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="j95-3m-932"/>
                                                 </constraints>
@@ -271,6 +282,8 @@
                         <outlet property="email" destination="WBz-oL-YSg" id="8An-8I-3wO"/>
                         <outlet property="password" destination="66x-qh-go8" id="9dW-me-hYx"/>
                         <outlet property="registerBtn" destination="6kV-lc-ZWr" id="302-x6-2Wx"/>
+                        <outlet property="scrollView" destination="xcL-zw-vsU" id="gns-f8-TFX"/>
+                        <outlet property="segmentControl" destination="jLN-rz-gyY" id="X8z-gD-h8C"/>
                         <outlet property="signIn" destination="2sa-aG-LsM" id="z53-V6-xHl"/>
                         <outlet property="signInEmail" destination="4Be-9h-12j" id="UV0-Rg-XyF"/>
                         <outlet property="signInPassword" destination="zaX-By-7zp" id="I5K-e1-nJ3"/>
@@ -324,6 +337,9 @@
     <resources>
         <image name="arrowtriangle.backward" catalog="system" width="128" height="113"/>
         <image name="arrowtriangle.forward" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

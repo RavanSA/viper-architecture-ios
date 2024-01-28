@@ -19,11 +19,13 @@ class AuthenticationViewController: UIViewController, AuthenticationViewControll
     @IBOutlet weak var signInPassword: UITextField!
     @IBOutlet weak var signInEmail: UITextField!
     @IBOutlet weak var signIn: UIButton!
-
-
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     // MARK: Properties
     var presenter: AuthenticationPresenterProtocol?
     var activityIndicatorView: UIActivityIndicatorView?
+    private var fromSegment: Bool = false
 
 
     // MARK: - View Functions
@@ -43,8 +45,8 @@ class AuthenticationViewController: UIViewController, AuthenticationViewControll
         email.text = ""
         confirmPassword.text = ""
         password.text = ""
-        signInEmail.text = ""
-        signInPassword.text = ""
+        signInEmail.text = "test123@gmail.com.com"
+        signInPassword.text = "123456"
         registerBtn.addTarget(self, action: #selector(createUser), for: .touchUpInside)
         signIn.addTarget(self, action: #selector(signInToTheApp), for: .touchUpInside)
         activityIndicatorView = UIActivityIndicatorView(style: .large)
@@ -78,7 +80,21 @@ class AuthenticationViewController: UIViewController, AuthenticationViewControll
              showMessage("Error!", title: "You should fill every single field!")
          }
      }
-
+    
+    
+    @IBAction func onSegmentChange(_ sender: UISegmentedControl) {
+        fromSegment = true
+        segmentChanged(index: sender.selectedSegmentIndex)
+    }
+    
+    func segmentChanged(index: Int) {
+        if index == 0 {
+            self.scrollView.setContentOffset(CGPoint.zero, animated: true)
+        } else {
+            self.scrollView.setContentOffset(CGPoint(x: self.signIn.frame.maxX + 20, y: 0), animated: true)
+        }
+    }
+    
 }
 
 
@@ -108,5 +124,24 @@ extension AuthenticationViewController {
     
     func updateWithNotSuccess() {
         
+    }
+}
+
+extension AuthenticationViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == self.scrollView && !fromSegment {
+            let offsetX = scrollView.contentOffset.x
+            let frameW = scrollView.frame.size.width
+            
+            if roundf( Float(offsetX / frameW) ) < 1 {
+                segmentControl.selectedSegmentIndex = 0
+            } else {
+                segmentControl.selectedSegmentIndex = 1
+            }
+        }
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        fromSegment = false
     }
 }

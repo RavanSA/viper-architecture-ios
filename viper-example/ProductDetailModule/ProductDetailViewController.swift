@@ -49,6 +49,12 @@ extension ProductDetailViewController {
             self.productRatingCount.text = self.productDetail?.rating.rate.toString()
             self.productRatingPoint.text = self.productDetail?.rating.count.toString()
             self.productDescription.text = self.productDetail?.description
+            
+            self.buyNowBtn.setTitle("Buy now", for: .normal)
+            self.buyNowBtn.setTitleColor(UIColor.white, for: .normal)
+            self.buyNowBtn.backgroundColor = UIColor.black
+            self.buyNowBtn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+            self.buyNowBtn.layer.cornerRadius = 20
         }
 
         DispatchQueue.global(qos: .background).async {
@@ -64,7 +70,7 @@ extension ProductDetailViewController {
     private func setupNavigationBar() {
         let shareButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(onRightButtonTapped))
         let saveButton = UIBarButtonItem(image: UIImage(systemName: "bookmark"), style: .plain, target: self, action: #selector(onRightButtonTapped))
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(onRightButtonTapped))
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(onBackButtonClicked))
 
         let rightButtons = [shareButton, saveButton]
         self.navigationItem.rightBarButtonItems = rightButtons
@@ -75,6 +81,10 @@ extension ProductDetailViewController {
 
     @objc func onRightButtonTapped() {
         
+    }
+    
+    @objc func onBackButtonClicked() {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

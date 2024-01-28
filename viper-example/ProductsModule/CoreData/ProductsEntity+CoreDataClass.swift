@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-
+@objc(Products)
 public class ProductsEntity: NSManagedObject {
 
 }

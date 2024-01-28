@@ -18,7 +18,8 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var productsCollectionView: UICollectionView!
-
+    @IBOutlet weak var bannerView: UIView!
+    
 
     // MARK: Properties
     var presenter: ProductsPresenterProtocol?
@@ -30,6 +31,8 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
         scrollview.backgroundColor = .clear
         return scrollview
     }()
+
+    private let refreshControl = UIRefreshControl()
 
 
     // MARK: - View Functions
@@ -58,9 +61,22 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
         productsCollectionView.dataSource = self
         productsCollectionView.delegate = self
         
+        refreshControl.addTarget(self, action: #selector(onRefreshClicked), for: .valueChanged)
+
+            let refreshControlContainer = UIScrollView()
+            refreshControlContainer.refreshControl = refreshControl
+            view.addSubview(refreshControlContainer)
+        bannerView.layer.cornerRadius = 10
+        
         presenter?.fetchProducts()
     }
 
+    @objc func onRefreshClicked() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.refreshControl.endRefreshing()
+        }
+    }
+    
 }
 
 // MARK: - Functions
@@ -93,9 +109,22 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
         if collectionView == productsCollectionView {
             let cell = productsCollectionView.dequeueReusableCell(withReuseIdentifier: "productsCell", for: indexPath) as! ProductsCollectionViewCell
             let productItem = products?[indexPath.row]
+//            let shadowLayer = CALayer()
+//
+            cell.layer.cornerRadius = 10
+//            shadowLayer.frame = cell.bounds
+//            shadowLayer.backgroundColor = UIColor.black.cgColor
+//            shadowLayer.shadowColor = UIColor.black.cgColor
+//            shadowLayer.shadowOpacity = 1
+//            shadowLayer.shadowRadius = 4
+//            shadowLayer.masksToBounds = false
+//            
+//            // Add shadow for each side
+//            let shadowPath = UIBezierPath(rect: cell.bounds.insetBy(dx: -2, dy: -2))
+//            shadowLayer.shadowPath = shadowPath.cgPath
+//            
+//            cell.layer.insertSublayer(shadowLayer, at: 0)
             
-            cell.layer.backgroundColor = UIColor.red.cgColor
-
             if let productItem {
                 cell.setup(products: productItem)
             }
@@ -112,17 +141,29 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == productsCollectionView {
-            let collectionViewWidth = collectionView.bounds.width/3.0
-            let collectionViewHeight = collectionViewWidth + 30
+            let spacing: CGFloat = 20
+            let numberOfColumns: CGFloat = 2
             
-            return CGSize(width: collectionViewWidth, height: collectionViewHeight)
+            let totalWidth = collectionView.bounds.width - (spacing * (numberOfColumns - 1))
+            
+            let itemWidth = totalWidth / numberOfColumns
+            
+            let itemHeight: CGFloat = 200
+            
+            return CGSize(width: itemWidth, height: itemHeight)
         } else {
             return CGSize(width: 80, height: 120)
         }
     }
     
-    private func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForItemAt indexPath: IndexPath) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 10) //
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if collectionView == productsCollectionView {
+            return UIEdgeInsets(top: 10, left: 5, bottom: 5, right: 5)
+        } else if collectionView == categoriesCollectionView {
+            return UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        } else {
+            return UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 10)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -138,5 +179,14 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
             // MARK: TODO
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        if collectionView == productsCollectionView {
+            return 0 // Adjust this value as needed
+        } else {
+            return 0 // No space between items for other collection views
+        }
+    }
+
     
 }

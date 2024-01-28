@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+extension String {
+    func toString() -> String {
+        return String(describing: self)
+    }
+}
