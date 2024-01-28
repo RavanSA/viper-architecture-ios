@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		3106B337B7E84ADDE3F8E365 /* Pods_viper_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFE578D1218B66F5AD700ECC /* Pods_viper_example.framework */; };
 		674FC492AD3518A0D5173189 /* Pods_viper_exampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094FC9B9585C3FCF1D5EFAE8 /* Pods_viper_exampleTests.framework */; };
+		C90247C72B66A75A00009B73 /* BasketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90247C62B66A75A00009B73 /* BasketPresenter.swift */; };
+		C90247C92B66A76600009B73 /* BasketInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90247C82B66A76600009B73 /* BasketInteractor.swift */; };
+		C90247CB2B66A77100009B73 /* BasketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90247CA2B66A77100009B73 /* BasketRouter.swift */; };
+		C90247CD2B66A78300009B73 /* BasketProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90247CC2B66A78300009B73 /* BasketProtocol.swift */; };
+		C90247CF2B66A79400009B73 /* BasketEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90247CE2B66A79400009B73 /* BasketEntity.swift */; };
+		C90247D22B66A7B800009B73 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90247D02B66A7B800009B73 /* BasketViewController.swift */; };
+		C90247D32B66A7B800009B73 /* BasketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90247D12B66A7B800009B73 /* BasketViewController.xib */; };
 		C919A20C2AA3896E00BCF7F5 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919A20B2AA3896E00BCF7F5 /* UIScrollView.swift */; };
 		C919A2112AA3E20900BCF7F5 /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919A2102AA3E20900BCF7F5 /* AuthenticationPresenter.swift */; };
 		C919A2132AA3E22100BCF7F5 /* AuthenticationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919A2122AA3E22100BCF7F5 /* AuthenticationInteractor.swift */; };
@@ -82,6 +89,13 @@
 		6D4B8C0CA53A6605F0701067 /* Pods_viper_example_viper_exampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_viper_example_viper_exampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74C07C6A3F9E8F9A4757BD57 /* Pods-viper-exampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viper-exampleTests.release.xcconfig"; path = "Target Support Files/Pods-viper-exampleTests/Pods-viper-exampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		7C4DCC148B45DF0A51E74638 /* Pods-viper-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viper-example.release.xcconfig"; path = "Target Support Files/Pods-viper-example/Pods-viper-example.release.xcconfig"; sourceTree = "<group>"; };
+		C90247C62B66A75A00009B73 /* BasketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketPresenter.swift; sourceTree = "<group>"; };
+		C90247C82B66A76600009B73 /* BasketInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketInteractor.swift; sourceTree = "<group>"; };
+		C90247CA2B66A77100009B73 /* BasketRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketRouter.swift; sourceTree = "<group>"; };
+		C90247CC2B66A78300009B73 /* BasketProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketProtocol.swift; sourceTree = "<group>"; };
+		C90247CE2B66A79400009B73 /* BasketEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketEntity.swift; sourceTree = "<group>"; };
+		C90247D02B66A7B800009B73 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		C90247D12B66A7B800009B73 /* BasketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketViewController.xib; sourceTree = "<group>"; };
 		C919A20B2AA3896E00BCF7F5 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		C919A2102AA3E20900BCF7F5 /* AuthenticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenter.swift; sourceTree = "<group>"; };
 		C919A2122AA3E22100BCF7F5 /* AuthenticationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInteractor.swift; sourceTree = "<group>"; };
@@ -173,6 +187,28 @@
 				094FC9B9585C3FCF1D5EFAE8 /* Pods_viper_exampleTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C90247C52B66A73F00009B73 /* BasketModule */ = {
+			isa = PBXGroup;
+			children = (
+				C90247D42B66A7BC00009B73 /* View */,
+				C90247C62B66A75A00009B73 /* BasketPresenter.swift */,
+				C90247C82B66A76600009B73 /* BasketInteractor.swift */,
+				C90247CA2B66A77100009B73 /* BasketRouter.swift */,
+				C90247CC2B66A78300009B73 /* BasketProtocol.swift */,
+				C90247CE2B66A79400009B73 /* BasketEntity.swift */,
+				C90247D02B66A7B800009B73 /* BasketViewController.swift */,
+			);
+			path = BasketModule;
+			sourceTree = "<group>";
+		};
+		C90247D42B66A7BC00009B73 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C90247D12B66A7B800009B73 /* BasketViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C919A20A2AA3896000BCF7F5 /* Extension */ = {
@@ -278,6 +314,7 @@
 		C98F99812A9E78A300ADDE12 /* viper-example */ = {
 			isa = PBXGroup;
 			children = (
+				C90247C52B66A73F00009B73 /* BasketModule */,
 				C96E8C7A2B24CC4E00EFBCEF /* ProductDetailModule */,
 				C94B047D2AEC43BF00DF2D60 /* ProductsModule */,
 				C99773E82ABF344F00DBE07F /* Utils */,
@@ -482,6 +519,7 @@
 				C98F998A2A9E78A300ADDE12 /* Main.storyboard in Resources */,
 				C94B049B2AEE951600DF2D60 /* CategoriesCollectionViewCell.xib in Resources */,
 				C9CF38772B0DE8020055E7EA /* ProductsCell.xib in Resources */,
+				C90247D32B66A7B800009B73 /* BasketViewController.xib in Resources */,
 				C94B04812AEC440A00DF2D60 /* ProductsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,6 +650,8 @@
 			files = (
 				C919A20C2AA3896E00BCF7F5 /* UIScrollView.swift in Sources */,
 				C9594B712B01415900624E79 /* JSONManager.swift in Sources */,
+				C90247C72B66A75A00009B73 /* BasketPresenter.swift in Sources */,
+				C90247CD2B66A78300009B73 /* BasketProtocol.swift in Sources */,
 				C9CF38752B0DE6460055E7EA /* ProductsCell.swift in Sources */,
 				C919A2192AA4B42400BCF7F5 /* AuthenticationProtocol.swift in Sources */,
 				C94B04832AEC442A00DF2D60 /* ProductsPresenter.swift in Sources */,
@@ -628,10 +668,12 @@
 				C96E8C812B24CCB600EFBCEF /* ProductDetailRouter.swift in Sources */,
 				C9F09B392AF81A5F007EFA8D /* Constant.swift in Sources */,
 				C94B04892AEC446500DF2D60 /* ProductsProtocol.swift in Sources */,
+				C90247CF2B66A79400009B73 /* BasketEntity.swift in Sources */,
 				C94B04852AEC443E00DF2D60 /* ProductsInteractor.swift in Sources */,
 				C98F99852A9E78A300ADDE12 /* SceneDelegate.swift in Sources */,
 				C96E8C882B24CD2500EFBCEF /* ProductDetailViewController.swift in Sources */,
 				C989421B2B65865700166DEF /* ProductsEntity+CoreDataClass.swift in Sources */,
+				C90247D22B66A7B800009B73 /* BasketViewController.swift in Sources */,
 				C919A2172AA3E27000BCF7F5 /* AuthenticationViewController.swift in Sources */,
 				C973C1DE2B0F723B0060B6CE /* Extension.swift in Sources */,
 				C9C5F47D2B5D83A90058FEAF /* PersistentController.swift in Sources */,
@@ -641,7 +683,9 @@
 				C94B049A2AEE951600DF2D60 /* CategoriesCollectionViewCell.swift in Sources */,
 				C96E8C7C2B24CC7200EFBCEF /* ProductDetailPresenter.swift in Sources */,
 				C919A2152AA3E23500BCF7F5 /* AuthenticationRouter.swift in Sources */,
+				C90247CB2B66A77100009B73 /* BasketRouter.swift in Sources */,
 				C919A2112AA3E20900BCF7F5 /* AuthenticationPresenter.swift in Sources */,
+				C90247C92B66A76600009B73 /* BasketInteractor.swift in Sources */,
 				C919A21B2AA4C40800BCF7F5 /* AuthenticationEntity.swift in Sources */,
 				C94B048B2AEC447300DF2D60 /* ProductsEntity.swift in Sources */,
 				C98F998D2A9E78A300ADDE12 /* ViperExampleApp.xcdatamodeld in Sources */,

@@ -8,8 +8,8 @@
 import UIKit
 
 class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
-
-
+    
+    
     // MARK: Outlets
     @IBOutlet weak var welcomeTxt: UILabel!
     @IBOutlet weak var userInformation: UILabel!
@@ -20,21 +20,21 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
     @IBOutlet weak var productsCollectionView: UICollectionView!
     @IBOutlet weak var bannerView: UIView!
     
-
+    
     // MARK: Properties
     var presenter: ProductsPresenterProtocol?
     var products: ProductsDTO?
-
+    
     var scrollview : UIScrollView = {
         let scrollview = UIScrollView()
         scrollview.translatesAutoresizingMaskIntoConstraints = false
         scrollview.backgroundColor = .clear
         return scrollview
     }()
-
+    
     private let refreshControl = UIRefreshControl()
-
-
+    
+    
     // MARK: - View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,12 +42,12 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
         
         setupUI()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         self.navigationItem.setHidesBackButton(true, animated: true)
         navigationController?.navigationBar.isHidden = false
     }
-
+    
     private func setupUI() {
         let categoryNib = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil)
         let productsNib = UINib(nibName: "ProductsCell", bundle: nil)
@@ -62,11 +62,24 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
         productsCollectionView.delegate = self
         
         refreshControl.addTarget(self, action: #selector(onRefreshClicked), for: .valueChanged)
-
-            let refreshControlContainer = UIScrollView()
-            refreshControlContainer.refreshControl = refreshControl
-            view.addSubview(refreshControlContainer)
+        
+        let refreshControlContainer = UIScrollView()
+        refreshControlContainer.refreshControl = refreshControl
+        view.addSubview(refreshControlContainer)
         bannerView.layer.cornerRadius = 10
+        
+        let firstItem = UIBarButtonItem(title: "120.2 USD", style: .plain, target: self, action: #selector(firstItemTapped))
+
+        let secondItemImage = UIImage(systemName: "basket")
+        let secondItem = UIBarButtonItem(image: secondItemImage, style: .plain, target: self, action: #selector(firstItemTapped))
+        secondItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
+        
+        let leftItems: [UIBarButtonItem] = [secondItem, firstItem]
+        
+        navigationItem.rightBarButtonItems = leftItems
+        navigationController?.navigationBar.tintColor = UIColor.black
+
         
         presenter?.fetchProducts()
     }
@@ -77,6 +90,10 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
         }
     }
     
+    @objc func firstItemTapped() {
+        presenter?.routeToBasket()
+    }
+
 }
 
 // MARK: - Functions
@@ -109,22 +126,8 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
         if collectionView == productsCollectionView {
             let cell = productsCollectionView.dequeueReusableCell(withReuseIdentifier: "productsCell", for: indexPath) as! ProductsCollectionViewCell
             let productItem = products?[indexPath.row]
-//            let shadowLayer = CALayer()
-//
             cell.layer.cornerRadius = 10
-//            shadowLayer.frame = cell.bounds
-//            shadowLayer.backgroundColor = UIColor.black.cgColor
-//            shadowLayer.shadowColor = UIColor.black.cgColor
-//            shadowLayer.shadowOpacity = 1
-//            shadowLayer.shadowRadius = 4
-//            shadowLayer.masksToBounds = false
-//            
-//            // Add shadow for each side
-//            let shadowPath = UIBezierPath(rect: cell.bounds.insetBy(dx: -2, dy: -2))
-//            shadowLayer.shadowPath = shadowPath.cgPath
-//            
-//            cell.layer.insertSublayer(shadowLayer, at: 0)
-            
+
             if let productItem {
                 cell.setup(products: productItem)
             }
@@ -182,9 +185,9 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == productsCollectionView {
-            return 0 // Adjust this value as needed
+            return 0
         } else {
-            return 0 // No space between items for other collection views
+            return 0
         }
     }
 

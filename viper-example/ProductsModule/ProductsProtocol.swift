@@ -16,6 +16,7 @@ protocol ProductsPresenterProtocol: AnyObject {
     func onFetchProductsFailed()
     func routeToProductDetail()
     func fetchProducts()
+    func routeToBasket()
 }
 
 protocol ProductsViewControllerProtocol: AnyObject {
@@ -25,4 +26,5 @@ protocol ProductsViewControllerProtocol: AnyObject {
 
 protocol ProductsRouterProtocol {
     func routeToProductDetail()
+    func routeToBasket()
 }

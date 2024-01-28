@@ -25,6 +25,10 @@ class ProductsPresenter : ProductsPresenterProtocol {
         router?.routeToProductDetail()
     }
     
+    func routeToBasket() {
+        router?.routeToBasket()
+    }
+    
     func fetchProducts() {
         interactor?.didFetchProducts()
     }
