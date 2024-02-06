@@ -9,12 +9,17 @@ import Foundation
 
 protocol ProductDetailInteractorProtocol {
     func didFetchProductDetail(productID: Int?)
+    func insertProductToBasket(product: ProductDetailResponse?)
+    func updateProductQuantity(actionType:  BasketActionType, product: ProductDetailResponse?)
 }
 
 protocol ProductDetailPresenterProtocol: AnyObject {
     func onFetchProductDetailSucces(response: ProductDetailResponse)
     func onFetchProductDetailFailed(errorMsg: String)
     func fetchProductDetail(productID: Int?)
+    func onAddToBasket(product: ProductDetailResponse?)
+    func onProductQuantityIncrease(productID: Int)
+    func onProductQuantityDecrease(productID: Int)
     func routeToProducts()
 }
 

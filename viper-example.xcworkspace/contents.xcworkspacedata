@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:viper-example/BasketModule/CoreData/Basket+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:viper-example/BasketModule/CoreData/Basket+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:viper-example/ProductsModule/CoreData/ProductsEntity+CoreDataClass.swift">
    </FileRef>
    <FileRef

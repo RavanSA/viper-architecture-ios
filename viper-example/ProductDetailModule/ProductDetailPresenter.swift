@@ -29,4 +29,15 @@ class ProductDetailPresenter: ProductDetailPresenterProtocol {
         interactor?.didFetchProductDetail(productID: id)
     }
     
+    func onAddToBasket(product: ProductDetailResponse?) {
+        interactor?.insertProductToBasket(product: product)
+    }
+    
+    func onProductQuantityIncrease(productID: Int) {
+        
+    }
+    
+    func onProductQuantityDecrease(productID: Int) {
+        
+    }
 }

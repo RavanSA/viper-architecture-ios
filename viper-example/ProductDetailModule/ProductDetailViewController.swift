@@ -21,6 +21,9 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
     var productID: Int?
     var productDetail: ProductDetailResponse?
 
+    private lazy var productQuantityView = CustomQuantityController()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ProductDetailRouter.createModule(vc: self)
@@ -43,7 +46,10 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
 extension ProductDetailViewController {
 
     private func setupUI() {
+
         DispatchQueue.main.async {
+            self.setupConstraints()
+
             self.productTitle.text = self.productDetail?.title
             self.productPrice.text = self.productDetail?.price.toString()
             self.productRatingCount.text = self.productDetail?.rating.rate.toString()
@@ -54,6 +60,7 @@ extension ProductDetailViewController {
             self.buyNowBtn.setTitleColor(UIColor.white, for: .normal)
             self.buyNowBtn.backgroundColor = UIColor.black
             self.buyNowBtn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+            self.buyNowBtn.addTarget(self, action: #selector(self.onBuyNowBtnClicked), for: .touchUpInside)
             self.buyNowBtn.layer.cornerRadius = 20
         }
 
@@ -87,4 +94,53 @@ extension ProductDetailViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @objc func onBuyNowBtnClicked() {
+        presenter?.onAddToBasket(product: productDetail)
+        self.buyNowBtn.isHidden = true
+        toggleControlsVisibility()
+    }
+    
+    private func setupConstraints() {
+        self.view.addSubview(productQuantityView)
+        
+        productQuantityView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            productQuantityView.topAnchor.constraint(equalTo: productDescription.bottomAnchor),
+            productQuantityView.leadingAnchor.constraint(equalTo: productDescription.leadingAnchor),
+            productQuantityView.trailingAnchor.constraint(equalTo: productDescription.trailingAnchor)
+        ])
+        
+        productQuantityView.setQuantity("1")
+        
+        productQuantityView.showQuantityControls(false)
+        productQuantityView.isUserInteractionEnabled = true
+        
+        productQuantityView.btnPlus.addTarget(self, action: #selector(onPlusButtonClicked), for: .touchUpInside)
+        productQuantityView.btnMinus.addTarget(self, action: #selector(onMinusButtonClicked), for: .touchUpInside)
+        
+        productQuantityView.onPlusButtonClicked = {
+            
+        }
+        
+        productQuantityView.onMinusButtonClicked = {
+            
+        }
+    }
+    
+     func toggleControlsVisibility() {
+         productQuantityView.showQuantityControls(true)
+     }
+     
+     func updateQuantity() {
+
+     }
+    
+    @objc func onPlusButtonClicked() {
+
+    }
+    
+    @objc func onMinusButtonClicked() {
+
+    }
+
 }

@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+struct BasketModel {
+    var category: String
+    var productDescription: String
+    var basketID: Int
+    var productID: Int
+    var image: String
+    var price: String
+    var ratingCount: String
+    var ratingRate: String
+    var title: String
+    var productQuantity: Int
+    var userID: Int
+}

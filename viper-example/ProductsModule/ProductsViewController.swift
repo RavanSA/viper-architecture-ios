@@ -9,8 +9,8 @@ import UIKit
 
 class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
     
-    
     // MARK: Outlets
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var welcomeTxt: UILabel!
     @IBOutlet weak var userInformation: UILabel!
     @IBOutlet weak var basketPrice: UILabel!
@@ -24,17 +24,10 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
     // MARK: Properties
     var presenter: ProductsPresenterProtocol?
     var products: ProductsDTO?
-    
-    var scrollview : UIScrollView = {
-        let scrollview = UIScrollView()
-        scrollview.translatesAutoresizingMaskIntoConstraints = false
-        scrollview.backgroundColor = .clear
-        return scrollview
-    }()
-    
+
     private let refreshControl = UIRefreshControl()
-    
-    
+    private let searchController = UISearchController(searchResultsController: nil)
+
     // MARK: - View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +40,11 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
         self.navigationItem.setHidesBackButton(true, animated: true)
         navigationController?.navigationBar.isHidden = false
     }
+
+}
+
+// MARK: - Functions
+extension ProductsViewController {
     
     private func setupUI() {
         let categoryNib = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil)
@@ -63,46 +61,64 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
         
         refreshControl.addTarget(self, action: #selector(onRefreshClicked), for: .valueChanged)
         
-        let refreshControlContainer = UIScrollView()
-        refreshControlContainer.refreshControl = refreshControl
-        view.addSubview(refreshControlContainer)
+        let refreshControlContainer = self.scrollView
+        refreshControlContainer?.refreshControl = refreshControl
+        
+        if let container = refreshControlContainer {
+            view.addSubview(container)
+        }
+        
         bannerView.layer.cornerRadius = 10
         
-        let firstItem = UIBarButtonItem(title: "120.2 USD", style: .plain, target: self, action: #selector(firstItemTapped))
-
-        let secondItemImage = UIImage(systemName: "basket")
-        let secondItem = UIBarButtonItem(image: secondItemImage, style: .plain, target: self, action: #selector(firstItemTapped))
-        secondItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-
-        
-        let leftItems: [UIBarButtonItem] = [secondItem, firstItem]
-        
-        navigationItem.rightBarButtonItems = leftItems
-        navigationController?.navigationBar.tintColor = UIColor.black
-
+        setupNavigationBar()
         
         presenter?.fetchProducts()
     }
+    
+    private func setupNavigationBar() {
+        let leftIconButton = UIButton(type: .custom)
+        leftIconButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        
+        let leftIconImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        leftIconImageView.tintColor = .black
+        leftIconImageView.image = UIImage(systemName: "basket")
+        leftIconImageView.contentMode = .scaleAspectFit
+        
+        leftIconButton.addSubview(leftIconImageView)
+        
+        leftIconButton.addTarget(self, action: #selector(firstItemTapped), for: .touchUpInside)
+        
+        let leftBarButtonItem = UIBarButtonItem(customView: leftIconButton)
+
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Products"
+        searchController.searchBar.tintColor = .white
+        searchController.hidesNavigationBarDuringPresentation = true
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.rightBarButtonItem = leftBarButtonItem
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController!.navigationBar.sizeToFit()
+        
+        title = "Welcome"
+        
+        definesPresentationContext = true
+    }
 
     @objc func onRefreshClicked() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.refreshControl.endRefreshing()
-        }
+        presenter?.fetchProducts()
     }
     
     @objc func firstItemTapped() {
         presenter?.routeToBasket()
     }
-
-}
-
-// MARK: - Functions
-extension ProductsViewController {
     
     func fetchedProductsSuccesfully(response: ProductsDTO) {
         self.products = response
         DispatchQueue.main.async {
             self.productsCollectionView.reloadData()
+            self.refreshControl.endRefreshing()
         }
     }
     
@@ -192,4 +208,10 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
     }
 
     
+}
+
+extension ProductsViewController:  UISearchResultsUpdating, UISearchBarDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
 }

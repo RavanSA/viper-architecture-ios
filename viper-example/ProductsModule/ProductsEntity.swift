@@ -15,11 +15,10 @@ struct Categories {
 }
 
 let categories: [Categories] = [
-    Categories(categoryName: "PC", categoryImage: "cat1"),
-    Categories(categoryName: "Phone", categoryImage: "cat2"),
-    Categories(categoryName: "Earphone", categoryImage: "cat3"),
-    Categories(categoryName: "Gaming", categoryImage: "cat4"),
-    Categories(categoryName: "All", categoryImage: "cat5")
+    Categories(categoryName: "PC", categoryImage: "laptopcomputer"),
+    Categories(categoryName: "Earphone", categoryImage: "beats.earphones"),
+    Categories(categoryName: "Gaming", categoryImage: "gamecontroller"),
+    Categories(categoryName: "All", categoryImage: "rectangle.split.2x2.fill")
 ]
 
 
@@ -51,27 +50,3 @@ struct Rating: Codable {
 }
 
 typealias ProductsDTO = [ProductsDTOElement]
-
-
-//// MARK: CoreData Entity
-//@objc(Products)
-//public class ProductsManagedObject: NSManagedObject {
-//
-//}
-
-//extension ProductsManagedObject {
-//
-//    @nonobjc public class func fetchRequest() -> NSFetchRequest<ProductsManagedObject> {
-//        return NSFetchRequest<ProductsManagedObject>(entityName: "Products")
-//    }
-//
-//    @NSManaged public var category: String?
-//    @NSManaged public var id: Int64
-//    @NSManaged public var image: String?
-//    @NSManaged public var price: Double
-//    @NSManaged public var productDescription: String?
-//    @NSManaged public var rate: String?
-//    @NSManaged public var rateCount: Int64
-//    @NSManaged public var title: String?
-//
-//}

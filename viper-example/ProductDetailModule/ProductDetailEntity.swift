@@ -7,12 +7,11 @@
 
 import Foundation
 
-// MARK: - ProductDetailRequest
+// MARK: - DTO
 struct ProductDetailDTORequest : Encodable {
     
 }
 
-// MARK: - ProductDetailResponse
 struct ProductDetailResponse: Codable {
     let id: Int
     let title: String
@@ -22,8 +21,13 @@ struct ProductDetailResponse: Codable {
     let rating: ProductDetailRating
 }
 
-// MARK: - Rating
 struct ProductDetailRating: Codable {
     let rate: Double
     let count: Int
+}
+
+// MARK: Enum
+enum BasketActionType {
+    case increaseProductQuantity
+    case descreaseProductQuantity
 }

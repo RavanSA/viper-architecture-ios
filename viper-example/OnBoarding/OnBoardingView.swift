@@ -117,12 +117,6 @@ class OnBoardingView: UIViewController, UIScrollViewDelegate {
             setIndiactorForCurrentPage()
             if currentPage == 2 {
                 performSegue(withIdentifier: "toAuthVC", sender: self)
-//                let vc = AuthenticationRouter.createModule()
-//                self.navigationController?.pushViewController(vc, animated: true)
-
-//                let detailVC = storyboard?.instantiateViewController(withIdentifier: "authVC") as! AuthenticationViewController
-//                navigationController?.pushViewController(detailVC, animated: true)
-
             }
 
             let desiredOffset = CGPoint(x: scrollOffset ?? scrollWidth, y: 0)
