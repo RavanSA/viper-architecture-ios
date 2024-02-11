@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+protocol BasketInteractorProtocol {
+    func getAllProductsFromBasket() -> CoreDataObservable<Basket>?
+}
+
+protocol BasketPresenterProtocol: AnyObject {
+    func onAllProductsFromBasket() -> CoreDataObservable<Basket>?
+}
+
+protocol BasketViewControllerProtocol: AnyObject {
+
+}
+
+protocol BasketRouterProtocol {
+
+}

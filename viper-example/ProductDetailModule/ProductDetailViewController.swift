@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ProductDetailViewController: UIViewController, ProductDetailViewControllerProtocol {
 
@@ -22,8 +24,8 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
     var productDetail: ProductDetailResponse?
 
     private lazy var productQuantityView = CustomQuantityController()
+    private var disposeBag = DisposeBag()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         ProductDetailRouter.createModule(vc: self)
@@ -60,8 +62,9 @@ extension ProductDetailViewController {
             self.buyNowBtn.setTitleColor(UIColor.white, for: .normal)
             self.buyNowBtn.backgroundColor = UIColor.black
             self.buyNowBtn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-            self.buyNowBtn.addTarget(self, action: #selector(self.onBuyNowBtnClicked), for: .touchUpInside)
             self.buyNowBtn.layer.cornerRadius = 20
+            
+            self.observeProductQuantity()
         }
 
         DispatchQueue.global(qos: .background).async {
@@ -102,45 +105,48 @@ extension ProductDetailViewController {
     
     private func setupConstraints() {
         self.view.addSubview(productQuantityView)
-        
+
         productQuantityView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             productQuantityView.topAnchor.constraint(equalTo: productDescription.bottomAnchor),
             productQuantityView.leadingAnchor.constraint(equalTo: productDescription.leadingAnchor),
-            productQuantityView.trailingAnchor.constraint(equalTo: productDescription.trailingAnchor)
+            productQuantityView.trailingAnchor.constraint(equalTo: productDescription.trailingAnchor),
+            productQuantityView.heightAnchor.constraint(equalToConstant: 50)
         ])
-        
-        productQuantityView.setQuantity("1")
-        
-        productQuantityView.showQuantityControls(false)
-        productQuantityView.isUserInteractionEnabled = true
-        
-        productQuantityView.btnPlus.addTarget(self, action: #selector(onPlusButtonClicked), for: .touchUpInside)
-        productQuantityView.btnMinus.addTarget(self, action: #selector(onMinusButtonClicked), for: .touchUpInside)
-        
-        productQuantityView.onPlusButtonClicked = {
-            
-        }
-        
-        productQuantityView.onMinusButtonClicked = {
-            
-        }
     }
     
-     func toggleControlsVisibility() {
-         productQuantityView.showQuantityControls(true)
-     }
-     
-     func updateQuantity() {
-
-     }
-    
-    @objc func onPlusButtonClicked() {
-
+    private func toggleControlsVisibility() {
+        productQuantityView.showQuantityControls(true)
     }
     
-    @objc func onMinusButtonClicked() {
+    private func observeProductQuantity() {
+        presenter?.onFetchProductQuantity(byId: productID ?? 0)?
+            .subscribe(onNext: { [weak self] basket in
+                guard let self = self else { return }
+                
+                if let quantity = basket.first?.productQuantity, quantity > 0 {
+                    productQuantityView.setQuantity(Int(quantity).toString())
 
+                        productQuantityView.isHidden = false
+                        buyNowBtn.isHidden = true
+                    
+                    
+                    productQuantityView.onPlusButtonClicked = {
+                        self.presenter?.updateProductQuantity(actionType: .increaseProductQuantity, productID: self.productID ?? 0, quantity: Int(quantity))
+                    }
+                    
+                    productQuantityView.onMinusButtonClicked = {
+                        self.presenter?.updateProductQuantity(actionType: .descreaseProductQuantity, productID: self.productID ?? 0, quantity: Int(quantity))
+                    }
+                    
+                } else {
+                    productQuantityView.isHidden = true
+                    buyNowBtn.isHidden = false
+                    
+                    buyNowBtn.addTarget(self, action: #selector(self.onBuyNowBtnClicked), for: .touchUpInside)
+                }
+            })
+            .disposed(by: disposeBag)
     }
-
+    
 }

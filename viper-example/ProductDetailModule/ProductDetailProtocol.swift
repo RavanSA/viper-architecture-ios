@@ -10,16 +10,17 @@ import Foundation
 protocol ProductDetailInteractorProtocol {
     func didFetchProductDetail(productID: Int?)
     func insertProductToBasket(product: ProductDetailResponse?)
-    func updateProductQuantity(actionType:  BasketActionType, product: ProductDetailResponse?)
+    func updateProductQuantity(actionType: BasketActionType, productID: Int, quantity: Int)
+    func fetchProduct(byId id: Int) -> CoreDataObservable<Basket>?
 }
 
 protocol ProductDetailPresenterProtocol: AnyObject {
     func onFetchProductDetailSucces(response: ProductDetailResponse)
     func onFetchProductDetailFailed(errorMsg: String)
+    func onFetchProductQuantity(byId id: Int) -> CoreDataObservable<Basket>?
     func fetchProductDetail(productID: Int?)
     func onAddToBasket(product: ProductDetailResponse?)
-    func onProductQuantityIncrease(productID: Int)
-    func onProductQuantityDecrease(productID: Int)
+    func updateProductQuantity(actionType: BasketActionType, productID: Int, quantity: Int)
     func routeToProducts()
 }
 

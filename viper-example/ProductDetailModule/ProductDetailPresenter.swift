@@ -33,11 +33,12 @@ class ProductDetailPresenter: ProductDetailPresenterProtocol {
         interactor?.insertProductToBasket(product: product)
     }
     
-    func onProductQuantityIncrease(productID: Int) {
-        
+    func updateProductQuantity(actionType: BasketActionType, productID: Int, quantity: Int) {
+        interactor?.updateProductQuantity(actionType: actionType, productID: productID, quantity: quantity)
     }
     
-    func onProductQuantityDecrease(productID: Int) {
-        
+    func onFetchProductQuantity(byId id: Int) -> CoreDataObservable<Basket>? {
+        return interactor?.fetchProduct(byId: id)
     }
+    
 }

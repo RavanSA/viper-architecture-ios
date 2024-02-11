@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomQuantityController: UIView {
+class CustomQuantityController: UIView, UIGestureRecognizerDelegate {
     
     var onPlusButtonClicked: (() -> ())?
     var onMinusButtonClicked: (() -> ())?
@@ -19,6 +19,7 @@ class CustomQuantityController: UIView {
         button.setImage(UIImage(systemName: "minus.square")?.withRenderingMode(.alwaysTemplate).resized(toWidth: 30, toHeight: 30), for: .normal)
         button.contentMode = .scaleAspectFit
         button.isUserInteractionEnabled = true
+        button.addGestureRecognizer(minusTap)
         return button
     }()
     
@@ -38,8 +39,12 @@ class CustomQuantityController: UIView {
         button.setImage(UIImage(systemName: "plus.app")?.withRenderingMode(.alwaysTemplate).resized(toWidth: 30, toHeight: 30), for: .normal)
         button.contentMode = .scaleAspectFit
         button.isUserInteractionEnabled = true
+        button.addGestureRecognizer(plusTap)
         return button
     }()
+    
+    lazy var plusTap = UITapGestureRecognizer(target: self, action: #selector(onPlusBtnClicked(_:)))
+    lazy var minusTap = UITapGestureRecognizer(target: self, action: #selector(onMinusBtnClicked(_:)))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,7 +52,9 @@ class CustomQuantityController: UIView {
         addSubview(btnMinus)
         addSubview(tvProductQuantity)
         addSubview(btnPlus)
-        assignClosures()
+        
+        plusTap.delegate = self
+        minusTap.delegate = self
         
         setupConstraints()
     }
@@ -71,7 +78,6 @@ class CustomQuantityController: UIView {
             btnPlus.heightAnchor.constraint(equalToConstant: 30),
             btnPlus.widthAnchor.constraint(equalToConstant: 30)
         ])
-        
     }
     
     func setQuantity(_ quantity: String) {
@@ -84,25 +90,12 @@ class CustomQuantityController: UIView {
         btnPlus.isHidden = !show
     }
     
-    private func assignClosures() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped))
-        tvProductQuantity.addGestureRecognizer(tapGesture)
-        
-        btnMinus.addTarget(self, action: #selector(onMinusBtnClicked), for: .touchUpInside)
-    }
-    
-    @objc func onPlusBtnClicked() {
+    @objc func onPlusBtnClicked(_ sender: UITapGestureRecognizer? = nil) {
         onPlusButtonClicked?()
     }
     
-    @objc func onMinusBtnClicked() {
+    @objc func onMinusBtnClicked(_ sender: UITapGestureRecognizer? = nil) {
         onMinusButtonClicked?()
-
     }
-    
-    @objc func labelTapped() {
-
-    }
-
     
 }

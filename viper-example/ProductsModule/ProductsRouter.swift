@@ -33,7 +33,8 @@ class ProductsRouter : ProductsRouterProtocol {
     
     func routeToBasket() {
         let basketVC = BasketViewController(nibName: "BasketViewController", bundle: nil)
-        view?.present(basketVC, animated: true, completion: nil)
+        let navigationController = UINavigationController(rootViewController: basketVC)
+        view?.present(navigationController, animated: true, completion: nil)
     }
     
 }
