@@ -37,6 +37,7 @@ class ProductDetailInteractor : ProductDetailInteractorProtocol {
                     basketEntity.ratingRate = productDetail.rating.rate.toString()
                     basketEntity.ratingCount = productDetail.rating.count.toString()
                     basketEntity.productQuantity = 1
+                    basketEntity.productTitle = productDetail.title
                     
                     try context.save()
                 } catch {

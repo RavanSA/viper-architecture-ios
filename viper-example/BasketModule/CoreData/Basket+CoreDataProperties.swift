@@ -48,7 +48,7 @@ extension Basket {
     @NSManaged public var price: String?
     @NSManaged public var ratingCount: String?
     @NSManaged public var ratingRate: String?
-    @NSManaged public var title: String?
+    @NSManaged public var productTitle: String?
     @NSManaged public var productQuantity: Int16
     @NSManaged public var userID: Int64
 

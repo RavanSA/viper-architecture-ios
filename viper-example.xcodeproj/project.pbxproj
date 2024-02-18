@@ -50,6 +50,7 @@
 		C984F3372B6EBE2200578771 /* Basket+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984F3352B6EBE2200578771 /* Basket+CoreDataClass.swift */; };
 		C989421B2B65865700166DEF /* ProductsEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98942192B65865700166DEF /* ProductsEntity+CoreDataClass.swift */; };
 		C989421C2B65865700166DEF /* ProductsEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989421A2B65865700166DEF /* ProductsEntity+CoreDataProperties.swift */; };
+		C98C7F3A2B8260C900A52F32 /* BasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C7F392B8260C900A52F32 /* BasketCell.swift */; };
 		C98F99832A9E78A300ADDE12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F99822A9E78A300ADDE12 /* AppDelegate.swift */; };
 		C98F99852A9E78A300ADDE12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F99842A9E78A300ADDE12 /* SceneDelegate.swift */; };
 		C98F99872A9E78A300ADDE12 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F99862A9E78A300ADDE12 /* OnBoardingView.swift */; };
@@ -67,6 +68,7 @@
 		C9CF38752B0DE6460055E7EA /* ProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF38742B0DE6460055E7EA /* ProductsCell.swift */; };
 		C9CF38772B0DE8020055E7EA /* ProductsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CF38762B0DE8020055E7EA /* ProductsCell.xib */; };
 		C9F09B392AF81A5F007EFA8D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F09B382AF81A5F007EFA8D /* Constant.swift */; };
+		C9FD91772B825A76008CE6EB /* BasketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FD91762B825A76008CE6EB /* BasketCell.xib */; };
 		D900BFA7D75A98DDC33C18C1 /* Pods_viper_example_viper_exampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4B8C0CA53A6605F0701067 /* Pods_viper_example_viper_exampleUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +137,7 @@
 		C984F3352B6EBE2200578771 /* Basket+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Basket+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C98942192B65865700166DEF /* ProductsEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductsEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C989421A2B65865700166DEF /* ProductsEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductsEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C98C7F392B8260C900A52F32 /* BasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCell.swift; sourceTree = "<group>"; };
 		C98F997F2A9E78A300ADDE12 /* viper-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "viper-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98F99822A9E78A300ADDE12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C98F99842A9E78A300ADDE12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +159,7 @@
 		C9CF38742B0DE6460055E7EA /* ProductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCell.swift; sourceTree = "<group>"; };
 		C9CF38762B0DE8020055E7EA /* ProductsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsCell.xib; sourceTree = "<group>"; };
 		C9F09B382AF81A5F007EFA8D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		C9FD91762B825A76008CE6EB /* BasketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketCell.xib; sourceTree = "<group>"; };
 		CAD160D760138BCABD7685FD /* Pods-viper-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viper-example.debug.xcconfig"; path = "Target Support Files/Pods-viper-example/Pods-viper-example.debug.xcconfig"; sourceTree = "<group>"; };
 		D53A5AFFD9B4D9E5AAFEA576 /* Pods-viper-example-viper-exampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viper-example-viper-exampleUITests.release.xcconfig"; path = "Target Support Files/Pods-viper-example-viper-exampleUITests/Pods-viper-example-viper-exampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EFE578D1218B66F5AD700ECC /* Pods_viper_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_viper_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +221,7 @@
 		C90247D42B66A7BC00009B73 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C9FD91752B825A63008CE6EB /* BasketCell */,
 				C90247D12B66A7B800009B73 /* BasketViewController.xib */,
 			);
 			path = View;
@@ -413,6 +418,15 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		C9FD91752B825A63008CE6EB /* BasketCell */ = {
+			isa = PBXGroup;
+			children = (
+				C9FD91762B825A76008CE6EB /* BasketCell.xib */,
+				C98C7F392B8260C900A52F32 /* BasketCell.swift */,
+			);
+			path = BasketCell;
+			sourceTree = "<group>";
+		};
 		E3622FC120EA449747BC269E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +554,7 @@
 				C98F998F2A9E78A400ADDE12 /* Assets.xcassets in Resources */,
 				C96E8C892B24CD2500EFBCEF /* ProductDetailViewController.xib in Resources */,
 				C98F998A2A9E78A300ADDE12 /* Main.storyboard in Resources */,
+				C9FD91772B825A76008CE6EB /* BasketCell.xib in Resources */,
 				C94B049B2AEE951600DF2D60 /* CategoriesCollectionViewCell.xib in Resources */,
 				C9CF38772B0DE8020055E7EA /* ProductsCell.xib in Resources */,
 				C90247D32B66A7B800009B73 /* BasketViewController.xib in Resources */,
@@ -714,6 +729,7 @@
 				C984F32E2B6EAA5300578771 /* CustomQuantityController.swift in Sources */,
 				C90247C92B66A76600009B73 /* BasketInteractor.swift in Sources */,
 				C919A21B2AA4C40800BCF7F5 /* AuthenticationEntity.swift in Sources */,
+				C98C7F3A2B8260C900A52F32 /* BasketCell.swift in Sources */,
 				C94B048B2AEC447300DF2D60 /* ProductsEntity.swift in Sources */,
 				C98F998D2A9E78A300ADDE12 /* ViperExampleApp.xcdatamodeld in Sources */,
 				C984F3372B6EBE2200578771 /* Basket+CoreDataClass.swift in Sources */,
