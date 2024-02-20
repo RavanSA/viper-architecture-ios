@@ -16,4 +16,12 @@ class BasketPresenter: BasketPresenterProtocol {
     func onAllProductsFromBasket() -> CoreDataObservable<Basket>? {
         return interactor?.getAllProductsFromBasket()
     }
+    
+    func updateProductQuantity(actionType: BasketActionType, productID: Int, quantity: Int) {
+        interactor?.updateProductQuantity(actionType: actionType, productID: productID, quantity: quantity)
+    }
+    
+    func deleteProductFromBasket(_ productID: Int) {
+        interactor?.deleteProductFromBasket(productID)
+    }
 }

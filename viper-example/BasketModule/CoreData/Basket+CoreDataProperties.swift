@@ -31,13 +31,30 @@ extension Basket {
             if let basket = baskets.first {
                 basket.setValue(newValue, forKey: columnName)
                 try context.save()
-                return true // Updated successfully
+                return true
             }
         } catch {
             print("Error updating column: \(error.localizedDescription)")
         }
         
-        return false // Failed to update
+        return false
+    }
+    
+    class func deleteRecordWithProductID(_ value: Int, _ context: NSManagedObjectContext) {
+        let fetchRequest: NSFetchRequest<Basket> = Basket.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "productID = %@", "\(value)")
+
+        do {
+            let result = try context.fetch(fetchRequest)
+            guard let entityToDelete = result.first else {
+                return
+            }
+            
+            context.delete(entityToDelete)
+            try context.save()
+        } catch {
+            print("Error deleting entity: \(error)")
+        }
     }
     
     @NSManaged public var category: String?

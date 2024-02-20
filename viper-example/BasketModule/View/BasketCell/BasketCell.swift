@@ -20,7 +20,7 @@ class BasketCell: UITableViewCell {
     func setup(item: Basket) {
         productTitle.text = item.productTitle
         productDescription.text = item.productDescription
-        productCount.text = "1"
+        productCount.text = "\(item.productQuantity)"
         DispatchQueue.global(qos: .background).async {
             let url = URL(string: item.image ?? "")
             if let data = try? Data(contentsOf: url!) {
@@ -40,22 +40,34 @@ class BasketCell: UITableViewCell {
         plusBtn.addGestureRecognizer(plusGestureRecognizer)
         minusBtn.addGestureRecognizer(minusGestureRecognizer)
 
+        deleteBtn.userInfo = ["productID": Int(item.productID)]
+        plusBtn.userInfo = ["productID": Int(item.productID), "quantity": Int(item.productQuantity)]
+        minusBtn.userInfo = ["productID": Int(item.productID), "quantity": Int(item.productQuantity)]
+
     }
     
     
     @objc func deleteBtnTapped(_ sender: UITapGestureRecognizer) {
-        print("deleteBtnTapped tapped in cell")
-        NotificationCenter.default.post(name: Notification.Name("DeleteBtnTapped"), object: nil)
+        if let userInfo = (sender.view as? UIImageView)?.userInfo as? [String: Any],
+           let _ = userInfo["productID"] as? Int {
+            NotificationCenter.default.post(name: Notification.Name("DeleteBtnTapped"), object: nil, userInfo: userInfo)
+        }
     }
     
     @objc func plusBtnTapped(_ sender: UITapGestureRecognizer) {
-        print("plusBtnTapped tapped in cell")
-        NotificationCenter.default.post(name: Notification.Name("PlusBtnTapped"), object: nil)
+        if let userInfo = (sender.view as? UIImageView)?.userInfo as? [String: Any],
+           let _ = userInfo["productID"] as? Int,
+           let _ = userInfo["quantity"] as? Int {
+            NotificationCenter.default.post(name: Notification.Name("PlusBtnTapped"), object: nil, userInfo: userInfo)
+        }
     }
     
     @objc func minusBtnTapped(_ sender: UITapGestureRecognizer) {
-        print("minusBtnTapped tapped in cell")
-        NotificationCenter.default.post(name: Notification.Name("MinusBtnTapped"), object: nil)
+        if let userInfo = (sender.view as? UIImageView)?.userInfo as? [String: Any],
+           let _ = userInfo["productID"] as? Int,
+           let _ = userInfo["quantity"] as? Int {
+            NotificationCenter.default.post(name: Notification.Name("MinusBtnTapped"), object: nil, userInfo: userInfo)
+        }
     }
     
 }

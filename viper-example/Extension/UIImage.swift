@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ObjectiveC
 
 extension UIImage {
     
@@ -37,6 +38,21 @@ extension UIImage {
             return coloredImage
         } else {
             return nil
+        }
+    }
+}
+
+extension UIImageView {
+    private struct AssociatedKeys {
+        static var userInfoKey = "userInfoKey"
+    }
+    
+    var userInfo: [String: Any]? {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.userInfoKey) as? [String: Any]
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.userInfoKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 }
