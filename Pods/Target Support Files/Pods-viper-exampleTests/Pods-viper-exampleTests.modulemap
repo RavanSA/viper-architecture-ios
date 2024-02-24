@@ -1,6 +1,0 @@
-framework module Pods_viper_exampleTests {
-  umbrella header "Pods-viper-exampleTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
