@@ -53,9 +53,10 @@ extension ProductDetailViewController {
             self.setupConstraints()
 
             self.productTitle.text = self.productDetail?.title
-            self.productPrice.text = self.productDetail?.price.toString()
-            self.productRatingCount.text = self.productDetail?.rating.rate.toString()
-            self.productRatingPoint.text = self.productDetail?.rating.count.toString()
+            self.productPrice.text = "\(self.productDetail?.price ?? 0.0) USD"
+            self.productImage.layer.cornerRadius = 20
+            self.productRatingCount.text = "\(self.productDetail?.rating.rate ?? 0.0) Ratings"
+            self.productRatingPoint.text = "\(self.productDetail?.rating.count ?? 0) Comments"
             self.productDescription.text = self.productDetail?.description
             
             self.buyNowBtn.setTitle("Buy now", for: .normal)
@@ -87,6 +88,8 @@ extension ProductDetailViewController {
 
         let leftButton = [backButton]
         self.navigationItem.leftBarButtonItems = leftButton
+        
+        navigationController?.navigationBar.tintColor = .black
     }
 
     @objc func onRightButtonTapped() {

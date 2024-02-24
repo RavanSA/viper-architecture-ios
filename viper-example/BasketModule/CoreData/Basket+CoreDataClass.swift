@@ -1,6 +1,6 @@
 //
 //  Basket+CoreDataClass.swift
-//  
+//
 //
 //  Created by Revan SADIGLI on 3.02.2024.
 //

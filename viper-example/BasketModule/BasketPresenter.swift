@@ -24,4 +24,13 @@ class BasketPresenter: BasketPresenterProtocol {
     func deleteProductFromBasket(_ productID: Int) {
         interactor?.deleteProductFromBasket(productID)
     }
+    
+    func routeToProductDetail(productID id: Int) {
+        router?.routeToProductDetail(productID: id)
+    }
+    
+    func deleteAllProductFromBasket(onComplete: () -> ()) {
+        interactor?.deleteAllProductFromBasket(onComplete: onComplete)
+    }
+    
 }

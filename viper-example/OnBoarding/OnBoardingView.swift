@@ -38,8 +38,8 @@ class OnBoardingView: UIViewController, UIScrollViewDelegate {
 
         forwardBtn.backgroundColor = UIColor.black
         backBtn.backgroundColor = UIColor.black
-        backBtn.layer.cornerRadius = 20
-        forwardBtn.layer.cornerRadius = 20
+        backBtn.layer.cornerRadius = 15
+        forwardBtn.layer.cornerRadius = 15
         self.navigationController?.navigationBar.isHidden = true
 
         forwardBtn.addTarget(self, action: #selector(increasePage(_:)), for: .touchUpInside)
@@ -141,7 +141,6 @@ class OnBoardingView: UIViewController, UIScrollViewDelegate {
 
 }
 
-// https://stackoverflow.com/questions/31857333/how-to-get-uiscrollview-vertical-direction-in-swift
 extension OnBoardingView {
      func scrollViewDidScroll(_ scrollView: UIScrollView) {
          if self.lastContentOffset.x > scrollView.contentOffset.x {

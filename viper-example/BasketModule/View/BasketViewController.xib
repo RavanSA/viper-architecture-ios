@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -14,98 +14,130 @@
                 <outlet property="buyNowBtn" destination="kLi-YN-Bmg" id="hnX-cG-iRJ"/>
                 <outlet property="itemAmount" destination="NiG-lQ-vYc" id="vrz-fk-M1G"/>
                 <outlet property="itemCount" destination="fd6-Jx-f53" id="GdI-jE-4LT"/>
-                <outlet property="tableView" destination="xcC-PL-dMS" id="9zl-tc-8Mn"/>
+                <outlet property="tableView" destination="xcC-PL-dMS" id="lkx-bh-mTY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xcC-PL-dMS">
-                    <rect key="frame" x="0.0" y="59" width="393" height="698"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
-                <stackView opaque="NO" contentMode="scaleToFill" id="IVM-xi-x3M">
-                    <rect key="frame" x="0.0" y="757" width="393" height="61"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8h-zv-12g">
+                    <rect key="frame" x="0.0" y="47" width="428" height="845"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MdN-QN-Y1O">
-                            <rect key="frame" x="0.0" y="0.0" width="275" height="61"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xcC-PL-dMS">
+                            <rect key="frame" x="0.0" y="0.0" width="428" height="760.66666666666663"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7y-7u-afM">
+                            <rect key="frame" x="0.0" y="777.33333333333337" width="428" height="67.666666666666629"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-Jx-f53" customClass="PaddingLabel" customModule="viper_example" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="275" height="40.666666666666664"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
-                                            <real key="value" value="20"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
-                                            <real key="value" value="20"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiG-lQ-vYc" customClass="PaddingLabel" customModule="viper_example" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="40.666666666666664" width="275" height="20.333333333333336"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MdN-QN-Y1O">
+                                    <rect key="frame" x="0.0" y="0.0" width="299.66666666666669" height="67.666666666666671"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-Jx-f53" customClass="PaddingLabel" customModule="viper_example" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="299.66666666666669" height="47.333333333333336"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiG-lQ-vYc" customClass="PaddingLabel" customModule="viper_example" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="47.333333333333258" width="299.66666666666669" height="20.333333333333329"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20.333333333333336" id="odH-CE-o0J"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEo-RD-Chz">
+                                    <rect key="frame" x="299.66666666666669" y="0.0" width="128.33333333333331" height="67.666666666666671"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLi-YN-Bmg">
+                                            <rect key="frame" x="0.0" y="0.0" width="102.66666666666667" height="67.666666666666671"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joz-q6-ZkH">
+                                            <rect key="frame" x="102.66666666666663" y="0.0" width="25.666666666666657" height="67.666666666666671"/>
+                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        </view>
+                                    </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="20.333333333333336" id="odH-CE-o0J"/>
+                                        <constraint firstItem="joz-q6-ZkH" firstAttribute="width" secondItem="rEo-RD-Chz" secondAttribute="width" multiplier="0.2" id="6cR-Vc-94T"/>
+                                        <constraint firstItem="kLi-YN-Bmg" firstAttribute="width" secondItem="rEo-RD-Chz" secondAttribute="width" multiplier="0.8" id="8y4-es-wbY"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
-                                            <real key="value" value="20"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
-                                            <real key="value" value="20"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </label>
+                                </stackView>
                             </subviews>
+                            <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                            <color key="tintColor" systemColor="systemGray6Color"/>
+                            <constraints>
+                                <constraint firstItem="MdN-QN-Y1O" firstAttribute="width" secondItem="d7y-7u-afM" secondAttribute="width" multiplier="0.7" id="4bU-CK-Eqk"/>
+                                <constraint firstItem="rEo-RD-Chz" firstAttribute="width" secondItem="d7y-7u-afM" secondAttribute="width" multiplier="0.3" id="zbG-qC-tsW"/>
+                            </constraints>
                         </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLi-YN-Bmg">
-                            <rect key="frame" x="275" y="0.0" width="118" height="61"/>
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="30" maxY="0.0"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                        </button>
                     </subviews>
-                    <viewLayoutGuide key="safeArea" id="YT3-HV-3Or"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="MdN-QN-Y1O" firstAttribute="width" secondItem="IVM-xi-x3M" secondAttribute="width" multiplier="0.7" id="2Sx-YG-a6t"/>
-                        <constraint firstItem="kLi-YN-Bmg" firstAttribute="width" secondItem="IVM-xi-x3M" secondAttribute="width" multiplier="0.3" id="Ghn-w9-7jV"/>
+                        <constraint firstAttribute="trailing" secondItem="d7y-7u-afM" secondAttribute="trailing" id="1bz-WW-X1j"/>
+                        <constraint firstItem="xcC-PL-dMS" firstAttribute="leading" secondItem="C8h-zv-12g" secondAttribute="leading" id="8eE-3d-hlm"/>
+                        <constraint firstItem="xcC-PL-dMS" firstAttribute="top" secondItem="C8h-zv-12g" secondAttribute="top" id="D1E-xS-TOo"/>
+                        <constraint firstAttribute="bottom" secondItem="d7y-7u-afM" secondAttribute="bottom" id="IOr-pe-SOc"/>
+                        <constraint firstItem="d7y-7u-afM" firstAttribute="height" secondItem="C8h-zv-12g" secondAttribute="height" multiplier="0.08" id="Pc5-71-S5L"/>
+                        <constraint firstItem="d7y-7u-afM" firstAttribute="leading" secondItem="C8h-zv-12g" secondAttribute="leading" id="XL4-vh-kxb"/>
+                        <constraint firstAttribute="trailing" secondItem="xcC-PL-dMS" secondAttribute="trailing" id="oxc-IQ-bbo"/>
+                        <constraint firstItem="xcC-PL-dMS" firstAttribute="height" secondItem="C8h-zv-12g" secondAttribute="height" multiplier="0.9" id="rrL-ZV-hna"/>
                     </constraints>
-                </stackView>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="systemGray6Color"/>
             <constraints>
-                <constraint firstItem="xcC-PL-dMS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7af-WW-4fo"/>
-                <constraint firstItem="IVM-xi-x3M" firstAttribute="top" secondItem="xcC-PL-dMS" secondAttribute="bottom" id="IB2-mf-hms"/>
-                <constraint firstItem="xcC-PL-dMS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="59" id="Osj-To-KdO"/>
-                <constraint firstAttribute="trailing" secondItem="xcC-PL-dMS" secondAttribute="trailing" id="cE7-XH-3qg"/>
-                <constraint firstItem="IVM-xi-x3M" firstAttribute="leading" secondItem="xcC-PL-dMS" secondAttribute="leading" id="iqz-Dx-m1O"/>
-                <constraint firstItem="xcC-PL-dMS" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IVM-xi-x3M" secondAttribute="trailing" id="rCt-uM-KM6"/>
+                <constraint firstItem="C8h-zv-12g" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3wg-sX-fHw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="C8h-zv-12g" secondAttribute="bottom" id="bQg-jb-6rg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="C8h-zv-12g" secondAttribute="top" id="m1D-f9-xcN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="C8h-zv-12g" secondAttribute="leading" id="wa7-n2-mzm"/>
             </constraints>
-            <point key="canvasLocation" x="12.977099236641221" y="20.422535211267608"/>
+            <point key="canvasLocation" x="11.214953271028037" y="19.438444924406049"/>
         </view>
     </objects>
     <designables>
         <designable name="NiG-lQ-vYc">
-            <size key="intrinsicContentSize" width="81.333333333333343" height="30.333333333333332"/>
+            <size key="intrinsicContentSize" width="43.333333333333336" height="20.333333333333332"/>
         </designable>
         <designable name="fd6-Jx-f53">
-            <size key="intrinsicContentSize" width="81.333333333333343" height="30.333333333333332"/>
+            <size key="intrinsicContentSize" width="44.333333333333336" height="20.333333333333332"/>
         </designable>
     </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

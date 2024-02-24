@@ -26,4 +26,10 @@ class BasketRouter : BasketRouterProtocol {
         presenter.interactor = interactor
     }
     
+    func routeToProductDetail(productID id: Int) {
+        let productDetailVC = ProductDetailViewController()
+        productDetailVC.productID = id
+        view?.navigationController?.pushViewController(productDetailVC, animated: true)
+    }
+    
 }

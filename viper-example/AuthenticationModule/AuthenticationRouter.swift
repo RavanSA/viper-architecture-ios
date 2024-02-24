@@ -33,7 +33,7 @@ class AuthenticationRouter: AuthenticationRouterProtocol {
     func setupBottomBar() {
         let tabBarVC = UITabBarController()
         let vc1 = UINavigationController(rootViewController: ProductsViewController())
-        let vc2 = UINavigationController(rootViewController: SecondViewController())
+        let vc2 = UINavigationController(rootViewController: SearchViewController())
         let vc3 = UINavigationController(rootViewController: ThirdViewController())
         //           let vc3 = UINavigationController(rootViewController: ThirdViewController())
 

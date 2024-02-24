@@ -13,6 +13,8 @@ target 'viper-example' do
   pod 'SwiftLint'
   pod 'RxSwift', '6.5.0'
   pod 'RxCocoa', '6.5.0'
+  pod 'Kingfisher', '~> 7.0'
+
 
   target 'viper-exampleTests' do
     inherit! :search_paths

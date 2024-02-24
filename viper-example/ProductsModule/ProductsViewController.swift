@@ -19,11 +19,22 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var productsCollectionView: UICollectionView!
     @IBOutlet weak var bannerView: UIView!
-    
+    @IBOutlet weak var categoriesHeaderLabel: UILabel!
+    @IBOutlet weak var categoriesCollectionViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var categoriesHeaderLabelHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bannerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bannerImage: UIImageView!
     
     // MARK: Properties
     var presenter: ProductsPresenterProtocol?
-    var products: ProductsDTO?
+    
+    var products: ProductsDTO? {
+        didSet {
+            filteredproducts = products
+        }
+    }
+    
+    var filteredproducts: ProductsDTO?
 
     private let refreshControl = UIRefreshControl()
     private let searchController = UISearchController(searchResultsController: nil)
@@ -95,6 +106,8 @@ extension ProductsViewController {
         searchController.searchBar.placeholder = "Search Products"
         searchController.searchBar.tintColor = .white
         searchController.hidesNavigationBarDuringPresentation = true
+        
+        
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.rightBarButtonItem = leftBarButtonItem
@@ -132,7 +145,7 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.productsCollectionView {
-            return products?.count ?? 0
+            return filteredproducts?.count ?? 0
         } else {
             return categories.count
         }
@@ -141,7 +154,10 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == productsCollectionView {
             let cell = productsCollectionView.dequeueReusableCell(withReuseIdentifier: "productsCell", for: indexPath) as! ProductsCollectionViewCell
-            let productItem = products?[indexPath.row]
+            cell.productImage.image = UIImage(named: "placeholder")
+
+            let productItem = filteredproducts?[indexPath.row]
+            
             cell.layer.cornerRadius = 10
 
             if let productItem {
@@ -188,14 +204,12 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == productsCollectionView {
 
-            if let selectedProductID = products?[indexPath.row].id {
+            if let selectedProductID = filteredproducts?[indexPath.row].id {
                 
                 let productDetailVC = ProductDetailViewController()
                 productDetailVC.productID = selectedProductID
                 navigationController?.pushViewController(productDetailVC, animated: true)
             }
-        } else {
-            // MARK: TODO
         }
     }
     
@@ -207,11 +221,45 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
         }
     }
 
-    
 }
 
 extension ProductsViewController:  UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
-        
+        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
+            
+            filteredproducts = products?.filter { $0.title.lowercased().contains(searchText.lowercased()) ||
+                $0.description.lowercased().contains(searchText.lowercased())
+            }
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.categoriesCollectionViewHeightConstraint.constant = 0
+                self.bannerViewHeightConstraint.constant = 0
+                self.categoriesHeaderLabelHeightConstraint.constant = 0
+                self.bannerImage.isHidden = true
+                self.productsCollectionView.reloadData()
+            })
+        } else {
+            filteredproducts = products
+
+            UIView.animate(withDuration: 0.5, animations: {
+                self.categoriesCollectionViewHeightConstraint.constant = 150
+                self.bannerViewHeightConstraint.constant = 165
+                self.categoriesHeaderLabelHeightConstraint.constant = 30
+                self.bannerImage.isHidden = false
+                self.productsCollectionView.reloadData()
+            })
+        }
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        filteredproducts = products
+        UIView.animate(withDuration: 0.5, animations: {
+            self.categoriesCollectionViewHeightConstraint.constant = 150
+            self.bannerViewHeightConstraint.constant = 165
+            self.categoriesHeaderLabelHeightConstraint.constant = 30
+            self.bannerImage.isHidden = false
+            self.productsCollectionView.reloadData()
+        })
+    }
+    
 }

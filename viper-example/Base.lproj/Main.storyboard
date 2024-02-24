@@ -21,26 +21,26 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="695"/>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="czx-aL-1iw">
-                                <rect key="frame" x="0.0" y="745" width="393" height="34.333333333333371"/>
+                                <rect key="frame" x="20" y="745" width="353" height="34.333333333333371"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEW-5b-L4g">
-                                        <rect key="frame" x="0.0" y="0.0" width="74.666666666666671" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="54.666666666666664" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="arrowtriangle.backward" catalog="system">
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
                                     <pageControl opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="K2t-bg-kLO">
-                                        <rect key="frame" x="138.66666666666666" y="0.0" width="115.66666666666666" height="34.333333333333336"/>
+                                        <rect key="frame" x="118.66666666666666" y="0.0" width="115.66666666666666" height="34.333333333333336"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8u-a1-wT3">
-                                        <rect key="frame" x="318.33333333333331" y="0.0" width="74.666666666666686" height="34.333333333333336"/>
+                                        <rect key="frame" x="298.33333333333331" y="0.0" width="54.666666666666686" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="arrowtriangle.forward" catalog="system">
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
@@ -54,9 +54,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="top" secondItem="t3G-yM-N98" secondAttribute="top" id="93O-8p-ei2"/>
-                            <constraint firstItem="czx-aL-1iw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ghm-TX-xqf"/>
+                            <constraint firstItem="czx-aL-1iw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="Ghm-TX-xqf"/>
                             <constraint firstItem="czx-aL-1iw" firstAttribute="top" secondItem="t3G-yM-N98" secondAttribute="bottom" constant="50" id="Ko1-9f-zBh"/>
-                            <constraint firstItem="czx-aL-1iw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SWA-qV-WSZ"/>
+                            <constraint firstItem="czx-aL-1iw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SWA-qV-WSZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="czx-aL-1iw" secondAttribute="bottom" constant="38.666666666666629" id="aPp-eD-kKq"/>
                             <constraint firstItem="t3G-yM-N98" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eHy-dV-qEy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t3G-yM-N98" secondAttribute="trailing" id="rzn-6N-5OL"/>
@@ -335,8 +335,8 @@
         <segue reference="w9Q-U0-QAX"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="arrowtriangle.backward" catalog="system" width="128" height="113"/>
-        <image name="arrowtriangle.forward" catalog="system" width="128" height="113"/>
+        <image name="chevron.left" catalog="system" width="97" height="128"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

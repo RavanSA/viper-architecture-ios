@@ -11,8 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductsViewController" customModule="viper_example" customModuleProvider="target">
             <connections>
+                <outlet property="bannerImage" destination="sTI-JF-HpD" id="Lgf-Be-4Vc"/>
                 <outlet property="bannerView" destination="rWG-IG-FxZ" id="aEG-y5-mwo"/>
+                <outlet property="bannerViewHeightConstraint" destination="2RJ-mK-2rz" id="ycf-Sa-5yY"/>
                 <outlet property="categoriesCollectionView" destination="JUO-P3-xGY" id="KIA-NL-QP5"/>
+                <outlet property="categoriesCollectionViewHeightConstraint" destination="omi-Z6-VLn" id="9Jo-yi-aCY"/>
+                <outlet property="categoriesHeaderLabel" destination="AlH-HI-KwV" id="aT9-EI-mv9"/>
+                <outlet property="categoriesHeaderLabelHeightConstraint" destination="xzw-Wv-A85" id="ndO-vg-8sw"/>
                 <outlet property="mainImageView" destination="sTI-JF-HpD" id="2Zz-9e-eTg"/>
                 <outlet property="productsCollectionView" destination="Tbd-ki-fYp" id="FR4-9u-9l3"/>
                 <outlet property="scrollView" destination="o2m-An-5DQ" id="qv4-0A-ogI"/>
@@ -67,22 +72,22 @@
                                     <rect key="frame" x="10" y="30" width="373" height="165"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYV-dv-KD6">
-                                            <rect key="frame" x="0.0" y="-20" width="403" height="180"/>
+                                            <rect key="frame" x="0.0" y="-20" width="373" height="185"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount 20%  For Laptops!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoJ-dt-F0h">
-                                                    <rect key="frame" x="0.0" y="0.0" width="201.66666666666666" height="180"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount 20%  For Laptops!" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoJ-dt-F0h">
+                                                    <rect key="frame" x="0.0" y="0.0" width="186.66666666666666" height="185"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="comppic" translatesAutoresizingMaskIntoConstraints="NO" id="sTI-JF-HpD">
-                                                    <rect key="frame" x="201.66666666666663" y="0.0" width="201.33333333333337" height="180"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="180" id="N5K-lS-uVE"/>
-                                                    </constraints>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="comppic" translatesAutoresizingMaskIntoConstraints="NO" id="sTI-JF-HpD">
+                                                    <rect key="frame" x="186.66666666666663" y="0.0" width="186.33333333333337" height="185"/>
+                                                    <rect key="contentStretch" x="0.40000000000000002" y="0.0" width="1" height="1"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="sTI-JF-HpD" firstAttribute="height" secondItem="EYV-dv-KD6" secondAttribute="height" id="dlm-pm-sxj"/>
+                                                <constraint firstItem="UoJ-dt-F0h" firstAttribute="height" secondItem="EYV-dv-KD6" secondAttribute="height" id="lwJ-of-mBE"/>
                                                 <constraint firstItem="UoJ-dt-F0h" firstAttribute="leading" secondItem="EYV-dv-KD6" secondAttribute="leading" id="n0o-86-Kj4"/>
                                                 <constraint firstItem="sTI-JF-HpD" firstAttribute="width" secondItem="UoJ-dt-F0h" secondAttribute="width" id="q5d-5E-aJ6"/>
                                             </constraints>
@@ -91,9 +96,10 @@
                                     <color key="backgroundColor" red="0.90196079019999997" green="0.40392160420000001" blue="0.4196078479" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="165" id="2RJ-mK-2rz"/>
-                                        <constraint firstAttribute="trailing" secondItem="EYV-dv-KD6" secondAttribute="trailing" constant="-30" id="F2H-1P-tkJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="EYV-dv-KD6" secondAttribute="trailing" id="F2H-1P-tkJ"/>
                                         <constraint firstItem="EYV-dv-KD6" firstAttribute="top" secondItem="rWG-IG-FxZ" secondAttribute="top" constant="-20" id="T6o-9r-rX3"/>
                                         <constraint firstItem="EYV-dv-KD6" firstAttribute="leading" secondItem="rWG-IG-FxZ" secondAttribute="leading" id="bhX-bg-krR"/>
+                                        <constraint firstAttribute="bottom" secondItem="EYV-dv-KD6" secondAttribute="bottom" id="qUJ-QW-Gkq"/>
                                     </constraints>
                                 </view>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Tbd-ki-fYp" userLabel="Products">

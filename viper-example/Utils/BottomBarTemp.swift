@@ -8,19 +8,6 @@
 import UIKit
 
 
-//MARK: TODO
-class SecondViewController: UIViewController {
-    let label = createLabel(str: "Settings Page")
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .purple
-        title = "Settings"
-        view.addSubview(label)
-        label.center = view.center
-    }
-}
-
 class ThirdViewController: UIViewController {
     
     let label = createLabel(str: "About Page")

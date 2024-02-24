@@ -40,4 +40,9 @@ class BasketInteractor : BasketInteractorProtocol {
         Basket.deleteRecordWithProductID(productID, viewContext)
     }
 
+    func deleteAllProductFromBasket(onComplete: () -> ()) {
+        persistentContainer.deleteAll(data: Basket.self)
+        onComplete()
+    }
+    
 }

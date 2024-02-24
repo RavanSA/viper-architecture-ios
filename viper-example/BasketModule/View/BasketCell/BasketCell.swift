@@ -18,23 +18,19 @@ class BasketCell: UITableViewCell {
     @IBOutlet weak var deleteBtn: UIImageView!
     
     func setup(item: Basket) {
-        productTitle.text = item.productTitle
-        productDescription.text = item.productDescription
-        productCount.text = "\(item.productQuantity)"
-        DispatchQueue.global(qos: .background).async {
-            let url = URL(string: item.image ?? "")
-            if let data = try? Data(contentsOf: url!) {
-                DispatchQueue.main.async {
-                    self.productPicture.image = UIImage(data: data)
-                }
-            }
-        }
+        let url = URL(string: item.image ?? "")
 
         let deleteGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(deleteBtnTapped(_:)))
 
         let plusGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(plusBtnTapped(_:)))
         
         let minusGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(minusBtnTapped(_:)))
+        
+        productTitle.text = item.productTitle
+        productDescription.text = item.productDescription
+        productCount.text = "\(item.productQuantity)"
+        
+        productPicture.kf.setImage(with: url)
 
         deleteBtn.addGestureRecognizer(deleteGestureRecognizer)
         plusBtn.addGestureRecognizer(plusGestureRecognizer)

@@ -5,8 +5,9 @@
 //  Created by Revan Sadigli on 22.11.2023.
 //
 
-import Foundation
 import UIKit
+import Kingfisher
+
 
 class ProductsCollectionViewCell: UICollectionViewCell {
     
@@ -14,21 +15,21 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productDescription: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-//        addShadow()
-    }
+    var activityIndicator: UIActivityIndicatorView!
 
     func setup(products: ProductsDTOElement) {
-        DispatchQueue.global(qos: .background).async {
-            let url = URL(string: products.image)!
-            if let data = try? Data(contentsOf: url) {
-                DispatchQueue.main.async {
-                    self.productImage.image = UIImage(data: data)
-                }
-            }
-        }
+        activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.center = self.center
+        addSubview(activityIndicator)
         
+        activityIndicator.startAnimating()
+        
+        let url = URL(string: products.image)
+        
+        productImage.kf.setImage(with: url) { _ in
+            self.activityIndicator.stopAnimating()
+        }
+
         productName.text = products.title
         productDescription.text = "\(products.price) USD"
         addRoundedView("\(products.rating.rate)")
@@ -85,19 +86,5 @@ class ProductsCollectionViewCell: UICollectionViewCell {
             mainStackView.bottomAnchor.constraint(equalTo: roundedView.bottomAnchor, constant: 0)
         ])
     }
-
-    private func addShadow() {
-        contentView.layer.cornerRadius = 4
-        contentView.layer.masksToBounds = false
-        
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.5
-        layer.shadowOffset = CGSize(width: 0, height: 1)
-        layer.shadowRadius = 1
-        layer.masksToBounds = false
-        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
-    }
-
-
 
 }

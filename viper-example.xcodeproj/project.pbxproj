@@ -15,7 +15,6 @@
 		C90247CD2B66A78300009B73 /* BasketProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90247CC2B66A78300009B73 /* BasketProtocol.swift */; };
 		C90247CF2B66A79400009B73 /* BasketEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90247CE2B66A79400009B73 /* BasketEntity.swift */; };
 		C90247D22B66A7B800009B73 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90247D02B66A7B800009B73 /* BasketViewController.swift */; };
-		C90247D32B66A7B800009B73 /* BasketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90247D12B66A7B800009B73 /* BasketViewController.xib */; };
 		C919A20C2AA3896E00BCF7F5 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919A20B2AA3896E00BCF7F5 /* UIScrollView.swift */; };
 		C919A2112AA3E20900BCF7F5 /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919A2102AA3E20900BCF7F5 /* AuthenticationPresenter.swift */; };
 		C919A2132AA3E22100BCF7F5 /* AuthenticationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919A2122AA3E22100BCF7F5 /* AuthenticationInteractor.swift */; };
@@ -68,6 +67,19 @@
 		C9C5F47F2B5D85460058FEAF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C5F47E2B5D85460058FEAF /* String.swift */; };
 		C9CF38752B0DE6460055E7EA /* ProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF38742B0DE6460055E7EA /* ProductsCell.swift */; };
 		C9CF38772B0DE8020055E7EA /* ProductsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9CF38762B0DE8020055E7EA /* ProductsCell.xib */; };
+		C9D2FFD92B8A618F002C17CF /* BasketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D2FFD82B8A60E5002C17CF /* BasketViewController.xib */; };
+		C9D2FFDB2B8A6579002C17CF /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D2FFDA2B8A6579002C17CF /* Helpers.swift */; };
+		C9D2FFDF2B8A6812002C17CF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D2FFDD2B8A6812002C17CF /* SearchViewController.swift */; };
+		C9D2FFE02B8A6812002C17CF /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D2FFDE2B8A6812002C17CF /* SearchViewController.xib */; };
+		C9D2FFE22B8A6820002C17CF /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D2FFE12B8A6820002C17CF /* SearchEntity.swift */; };
+		C9D2FFE42B8A683E002C17CF /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D2FFE32B8A683E002C17CF /* SearchRouter.swift */; };
+		C9D2FFE62B8A684F002C17CF /* SearchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D2FFE52B8A684F002C17CF /* SearchProtocol.swift */; };
+		C9D2FFE82B8A6899002C17CF /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D2FFE72B8A6899002C17CF /* SearchPresenter.swift */; };
+		C9D2FFEA2B8A68A6002C17CF /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D2FFE92B8A68A6002C17CF /* SearchInteractor.swift */; };
+		C9D2FFF02B8AAA58002C17CF /* SearchCategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D2FFEF2B8AAA58002C17CF /* SearchCategoriesCell.xib */; };
+		C9D2FFF22B8AAC97002C17CF /* SearchCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D2FFF12B8AAC97002C17CF /* SearchCategoriesCell.swift */; };
+		C9D2FFF52B8AB255002C17CF /* SearchProductsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D2FFF42B8AB255002C17CF /* SearchProductsCell.xib */; };
+		C9D2FFF72B8AB263002C17CF /* SearchProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D2FFF62B8AB263002C17CF /* SearchProductsCell.swift */; };
 		C9F09B392AF81A5F007EFA8D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F09B382AF81A5F007EFA8D /* Constant.swift */; };
 		C9FD91772B825A76008CE6EB /* BasketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FD91762B825A76008CE6EB /* BasketCell.xib */; };
 		D900BFA7D75A98DDC33C18C1 /* Pods_viper_example_viper_exampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4B8C0CA53A6605F0701067 /* Pods_viper_example_viper_exampleUITests.framework */; };
@@ -103,7 +115,6 @@
 		C90247CC2B66A78300009B73 /* BasketProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketProtocol.swift; sourceTree = "<group>"; };
 		C90247CE2B66A79400009B73 /* BasketEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketEntity.swift; sourceTree = "<group>"; };
 		C90247D02B66A7B800009B73 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
-		C90247D12B66A7B800009B73 /* BasketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketViewController.xib; sourceTree = "<group>"; };
 		C919A20B2AA3896E00BCF7F5 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		C919A2102AA3E20900BCF7F5 /* AuthenticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenter.swift; sourceTree = "<group>"; };
 		C919A2122AA3E22100BCF7F5 /* AuthenticationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInteractor.swift; sourceTree = "<group>"; };
@@ -160,6 +171,19 @@
 		C9C5F47E2B5D85460058FEAF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C9CF38742B0DE6460055E7EA /* ProductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCell.swift; sourceTree = "<group>"; };
 		C9CF38762B0DE8020055E7EA /* ProductsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsCell.xib; sourceTree = "<group>"; };
+		C9D2FFD82B8A60E5002C17CF /* BasketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketViewController.xib; sourceTree = "<group>"; };
+		C9D2FFDA2B8A6579002C17CF /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		C9D2FFDD2B8A6812002C17CF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C9D2FFDE2B8A6812002C17CF /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		C9D2FFE12B8A6820002C17CF /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
+		C9D2FFE32B8A683E002C17CF /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		C9D2FFE52B8A684F002C17CF /* SearchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProtocol.swift; sourceTree = "<group>"; };
+		C9D2FFE72B8A6899002C17CF /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		C9D2FFE92B8A68A6002C17CF /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		C9D2FFEF2B8AAA58002C17CF /* SearchCategoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCategoriesCell.xib; sourceTree = "<group>"; };
+		C9D2FFF12B8AAC97002C17CF /* SearchCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoriesCell.swift; sourceTree = "<group>"; };
+		C9D2FFF42B8AB255002C17CF /* SearchProductsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchProductsCell.xib; sourceTree = "<group>"; };
+		C9D2FFF62B8AB263002C17CF /* SearchProductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductsCell.swift; sourceTree = "<group>"; };
 		C9F09B382AF81A5F007EFA8D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C9FD91762B825A76008CE6EB /* BasketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketCell.xib; sourceTree = "<group>"; };
 		CAD160D760138BCABD7685FD /* Pods-viper-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viper-example.debug.xcconfig"; path = "Target Support Files/Pods-viper-example/Pods-viper-example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -223,8 +247,8 @@
 		C90247D42B66A7BC00009B73 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C9D2FFD82B8A60E5002C17CF /* BasketViewController.xib */,
 				C9FD91752B825A63008CE6EB /* BasketCell */,
-				C90247D12B66A7B800009B73 /* BasketViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -344,6 +368,7 @@
 		C98F99812A9E78A300ADDE12 /* viper-example */ = {
 			isa = PBXGroup;
 			children = (
+				C9D2FFDC2B8A67F8002C17CF /* SearchModule */,
 				C90247C52B66A73F00009B73 /* BasketModule */,
 				C96E8C7A2B24CC4E00EFBCEF /* ProductDetailModule */,
 				C94B047D2AEC43BF00DF2D60 /* ProductsModule */,
@@ -399,6 +424,7 @@
 				C96E8C8B2B260B1300EFBCEF /* BottomBarTemp.swift */,
 				C9C5F47C2B5D83A90058FEAF /* PersistentController.swift */,
 				C984F3312B6EBB0000578771 /* CoreDataObservable.swift */,
+				C9D2FFDA2B8A6579002C17CF /* Helpers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -410,6 +436,48 @@
 				C9CF38762B0DE8020055E7EA /* ProductsCell.xib */,
 			);
 			path = ProductsCell;
+			sourceTree = "<group>";
+		};
+		C9D2FFDC2B8A67F8002C17CF /* SearchModule */ = {
+			isa = PBXGroup;
+			children = (
+				C9D2FFEB2B8A68B3002C17CF /* View */,
+				C9D2FFDD2B8A6812002C17CF /* SearchViewController.swift */,
+				C9D2FFE12B8A6820002C17CF /* SearchEntity.swift */,
+				C9D2FFE32B8A683E002C17CF /* SearchRouter.swift */,
+				C9D2FFE52B8A684F002C17CF /* SearchProtocol.swift */,
+				C9D2FFE72B8A6899002C17CF /* SearchPresenter.swift */,
+				C9D2FFE92B8A68A6002C17CF /* SearchInteractor.swift */,
+			);
+			path = SearchModule;
+			sourceTree = "<group>";
+		};
+		C9D2FFEB2B8A68B3002C17CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9D2FFF32B8AB22E002C17CF /* SearchProductsCell */,
+				C9D2FFEC2B8AA9BC002C17CF /* SearchCategoriesCell */,
+				C9D2FFDE2B8A6812002C17CF /* SearchViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C9D2FFEC2B8AA9BC002C17CF /* SearchCategoriesCell */ = {
+			isa = PBXGroup;
+			children = (
+				C9D2FFEF2B8AAA58002C17CF /* SearchCategoriesCell.xib */,
+				C9D2FFF12B8AAC97002C17CF /* SearchCategoriesCell.swift */,
+			);
+			path = SearchCategoriesCell;
+			sourceTree = "<group>";
+		};
+		C9D2FFF32B8AB22E002C17CF /* SearchProductsCell */ = {
+			isa = PBXGroup;
+			children = (
+				C9D2FFF42B8AB255002C17CF /* SearchProductsCell.xib */,
+				C9D2FFF62B8AB263002C17CF /* SearchProductsCell.swift */,
+			);
+			path = SearchProductsCell;
 			sourceTree = "<group>";
 		};
 		C9F63D692B6584DB00F3C54E /* CoreData */ = {
@@ -552,15 +620,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D2FFD92B8A618F002C17CF /* BasketViewController.xib in Resources */,
+				C9D2FFF52B8AB255002C17CF /* SearchProductsCell.xib in Resources */,
 				C98F99922A9E78A400ADDE12 /* LaunchScreen.storyboard in Resources */,
 				C99773E72ABF282300DBE07F /* GoogleService-Info.plist in Resources */,
 				C98F998F2A9E78A400ADDE12 /* Assets.xcassets in Resources */,
 				C96E8C892B24CD2500EFBCEF /* ProductDetailViewController.xib in Resources */,
+				C9D2FFF02B8AAA58002C17CF /* SearchCategoriesCell.xib in Resources */,
 				C98F998A2A9E78A300ADDE12 /* Main.storyboard in Resources */,
 				C9FD91772B825A76008CE6EB /* BasketCell.xib in Resources */,
+				C9D2FFE02B8A6812002C17CF /* SearchViewController.xib in Resources */,
 				C94B049B2AEE951600DF2D60 /* CategoriesCollectionViewCell.xib in Resources */,
 				C9CF38772B0DE8020055E7EA /* ProductsCell.xib in Resources */,
-				C90247D32B66A7B800009B73 /* BasketViewController.xib in Resources */,
 				C94B04812AEC440A00DF2D60 /* ProductsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,10 +767,12 @@
 				C9CF38752B0DE6460055E7EA /* ProductsCell.swift in Sources */,
 				C919A2192AA4B42400BCF7F5 /* AuthenticationProtocol.swift in Sources */,
 				C94B04832AEC442A00DF2D60 /* ProductsPresenter.swift in Sources */,
+				C9D2FFE22B8A6820002C17CF /* SearchEntity.swift in Sources */,
 				C96E8C7F2B24CC9000EFBCEF /* ProductDetailInteractor.swift in Sources */,
 				C9594B6F2B01409800624E79 /* NetworkManager.swift in Sources */,
 				C96E8C8C2B260B1300EFBCEF /* BottomBarTemp.swift in Sources */,
 				C98F99872A9E78A300ADDE12 /* OnBoardingView.swift in Sources */,
+				C9D2FFE42B8A683E002C17CF /* SearchRouter.swift in Sources */,
 				C94B04872AEC445600DF2D60 /* ProductsRouter.swift in Sources */,
 				C94B04802AEC440A00DF2D60 /* ProductsViewController.swift in Sources */,
 				C989421C2B65865700166DEF /* ProductsEntity+CoreDataProperties.swift in Sources */,
@@ -707,6 +780,7 @@
 				C95BD1D32B85452600DF55F5 /* Int.swift in Sources */,
 				C984F3322B6EBB0000578771 /* CoreDataObservable.swift in Sources */,
 				C9C5F47F2B5D85460058FEAF /* String.swift in Sources */,
+				C9D2FFE82B8A6899002C17CF /* SearchPresenter.swift in Sources */,
 				C984F3362B6EBE2200578771 /* Basket+CoreDataProperties.swift in Sources */,
 				C98F99832A9E78A300ADDE12 /* AppDelegate.swift in Sources */,
 				C96E8C812B24CCB600EFBCEF /* ProductDetailRouter.swift in Sources */,
@@ -715,19 +789,24 @@
 				C90247CF2B66A79400009B73 /* BasketEntity.swift in Sources */,
 				C94B04852AEC443E00DF2D60 /* ProductsInteractor.swift in Sources */,
 				C98F99852A9E78A300ADDE12 /* SceneDelegate.swift in Sources */,
+				C9D2FFF22B8AAC97002C17CF /* SearchCategoriesCell.swift in Sources */,
+				C9D2FFEA2B8A68A6002C17CF /* SearchInteractor.swift in Sources */,
 				C96E8C882B24CD2500EFBCEF /* ProductDetailViewController.swift in Sources */,
 				C989421B2B65865700166DEF /* ProductsEntity+CoreDataClass.swift in Sources */,
 				C90247D22B66A7B800009B73 /* BasketViewController.swift in Sources */,
+				C9D2FFDB2B8A6579002C17CF /* Helpers.swift in Sources */,
 				C919A2172AA3E27000BCF7F5 /* AuthenticationViewController.swift in Sources */,
 				C973C1DE2B0F723B0060B6CE /* Extension.swift in Sources */,
 				C9C5F47D2B5D83A90058FEAF /* PersistentController.swift in Sources */,
 				C99773EA2ABF346100DBE07F /* ErrorManager.swift in Sources */,
 				C919A2132AA3E22100BCF7F5 /* AuthenticationInteractor.swift in Sources */,
+				C9D2FFE62B8A684F002C17CF /* SearchProtocol.swift in Sources */,
 				C96E8C832B24CCC500EFBCEF /* ProductDetailProtocol.swift in Sources */,
 				C94B049A2AEE951600DF2D60 /* CategoriesCollectionViewCell.swift in Sources */,
 				C984F3302B6EB09300578771 /* UIImage.swift in Sources */,
 				C96E8C7C2B24CC7200EFBCEF /* ProductDetailPresenter.swift in Sources */,
 				C919A2152AA3E23500BCF7F5 /* AuthenticationRouter.swift in Sources */,
+				C9D2FFDF2B8A6812002C17CF /* SearchViewController.swift in Sources */,
 				C90247CB2B66A77100009B73 /* BasketRouter.swift in Sources */,
 				C919A2112AA3E20900BCF7F5 /* AuthenticationPresenter.swift in Sources */,
 				C984F32E2B6EAA5300578771 /* CustomQuantityController.swift in Sources */,
@@ -736,6 +815,7 @@
 				C98C7F3A2B8260C900A52F32 /* BasketCell.swift in Sources */,
 				C94B048B2AEC447300DF2D60 /* ProductsEntity.swift in Sources */,
 				C98F998D2A9E78A300ADDE12 /* ViperExampleApp.xcdatamodeld in Sources */,
+				C9D2FFF72B8AB263002C17CF /* SearchProductsCell.swift in Sources */,
 				C984F3372B6EBE2200578771 /* Basket+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
