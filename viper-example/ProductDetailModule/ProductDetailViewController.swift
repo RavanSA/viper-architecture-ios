@@ -31,6 +31,7 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
         ProductDetailRouter.createModule(vc: self)
 
         setupNavigationBar()
+        self.showActivityIndicator()
         presenter?.fetchProductDetail(productID: productID)
     }
 
@@ -40,7 +41,7 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
     }
 
     func fetchedProductDetailFailed(errorMsg: String) {
-        showMessage("Error!", title: errorMsg)
+        showMessage("Error!", title: errorMsg, view: self)
     }
 
 }
@@ -73,6 +74,7 @@ extension ProductDetailViewController {
             if let data = try? Data(contentsOf: url) {
                 DispatchQueue.main.async {
                     self.productImage.image = UIImage(data: data)
+                    self.hideActivityIndicator()
                 }
             }
         }

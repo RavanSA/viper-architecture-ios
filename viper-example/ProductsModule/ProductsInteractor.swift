@@ -36,6 +36,7 @@ class ProductsInteractor : ProductsInteractorProtocol {
                 productEntity.price = product.price
                 productEntity.rate = product.rating.rate.toString()
                 productEntity.rateCount = Int64(product.rating.count)
+                productEntity.title = product.title
                 
                 try viewContext.save()
             } catch {

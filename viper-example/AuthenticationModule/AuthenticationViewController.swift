@@ -64,10 +64,10 @@ class AuthenticationViewController: UIViewController, AuthenticationViewControll
                  activityIndicatorView!.startAnimating()
                  presenter?.notifyCreateUserButtonTapped(username: email, password: password)
              } else {
-                 showMessage("Error!", title: "Passwords are not matched!")
+                 showMessage("Error!", title: "Passwords are not matched!", view: self)
              }
          } else {
-             showMessage("Error!", title: "You should fill every single field!")
+             showMessage("Error!", title: "You should fill every single field!", view: self)
          }
      }
 
@@ -77,7 +77,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewControll
              guard let password = signInPassword.text else { return }
              presenter?.notifyDidButtonTapped(username: username, password: password)
          } else {
-             showMessage("Error!", title: "You should fill every single field!")
+             showMessage("Error!", title: "You should fill every single field!", view: self)
          }
      }
     

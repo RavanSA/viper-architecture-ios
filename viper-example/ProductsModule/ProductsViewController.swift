@@ -36,7 +36,7 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
     
     var filteredproducts: ProductsDTO?
 
-    private let refreshControl = UIRefreshControl()
+    private var refreshControl = UIRefreshControl()
     private let searchController = UISearchController(searchResultsController: nil)
 
     // MARK: - View Functions
@@ -58,6 +58,8 @@ class ProductsViewController: UIViewController, ProductsViewControllerProtocol {
 extension ProductsViewController {
     
     private func setupUI() {
+        self.showActivityIndicator()
+
         let categoryNib = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil)
         let productsNib = UINib(nibName: "ProductsCell", bundle: nil)
         
@@ -69,7 +71,7 @@ extension ProductsViewController {
         
         productsCollectionView.dataSource = self
         productsCollectionView.delegate = self
-        
+        scrollView.refreshControl = self.refreshControl
         refreshControl.addTarget(self, action: #selector(onRefreshClicked), for: .valueChanged)
         
         let refreshControlContainer = self.scrollView
@@ -132,11 +134,13 @@ extension ProductsViewController {
         DispatchQueue.main.async {
             self.productsCollectionView.reloadData()
             self.refreshControl.endRefreshing()
+            self.hideActivityIndicator()
         }
     }
     
     func fetchedProductsFailed() {
-        showMessage("Error!", title: "Error Occured")
+        showMessage("Error!", title: "Error Occured", view: self)
+        self.hideActivityIndicator()
     }
     
 }

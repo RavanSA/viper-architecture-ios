@@ -25,8 +25,8 @@ class SearchCategoriesCell: UICollectionViewCell {
         updateBorderColor()
     }
     
-    func setup(item: CategoriesItem) {
-        categoryName.text = item.categoryName
+    func setup(item: String) {
+        categoryName.text = item
     }
     
     private func updateBorderColor() {

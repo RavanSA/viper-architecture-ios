@@ -7,18 +7,17 @@
 
 import Foundation
 
-struct CategoriesItem {
-    var id: UUID
-    var categoryName: String
+struct CategoriesRequest : Encodable {
+    
 }
 
-var categoriesItems: [CategoriesItem] = [
-    CategoriesItem(id: UUID(), categoryName: "Category 1"),
-    CategoriesItem(id: UUID(), categoryName: "Category 2"),
-    CategoriesItem(id: UUID(), categoryName: "Category 2"),
-    CategoriesItem(id: UUID(), categoryName: "Category 2"),
-    CategoriesItem(id: UUID(), categoryName: "Category 2"),
-    CategoriesItem(id: UUID(), categoryName: "Category 2"),
-    CategoriesItem(id: UUID(), categoryName: "Category 2"),
-    CategoriesItem(id: UUID(), categoryName: "Category 2")
-]
+//var categoriesItems: [CategoriesItem] = [
+//    CategoriesItem(id: UUID(), categoryName: "All"),
+//    CategoriesItem(id: UUID(), categoryName: "Category 2"),
+//    CategoriesItem(id: UUID(), categoryName: "Category 2"),
+//    CategoriesItem(id: UUID(), categoryName: "Category 2"),
+//    CategoriesItem(id: UUID(), categoryName: "Category 2"),
+//    CategoriesItem(id: UUID(), categoryName: "Category 2"),
+//    CategoriesItem(id: UUID(), categoryName: "Category 2"),
+//    CategoriesItem(id: UUID(), categoryName: "Category 2")
+//]
