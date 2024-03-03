@@ -21,8 +21,6 @@ func showMessage(_ message: String, title: String?, view: UIViewController) {
                 .first?.windows
                 .filter({$0.isKeyWindow}).first
         
-//        if let view = keyWindow?.rootViewController {
             view.present(alert, animated: true)
-//        }
     }
 }

@@ -10,14 +10,3 @@ import Foundation
 struct CategoriesRequest : Encodable {
     
 }
-
-//var categoriesItems: [CategoriesItem] = [
-//    CategoriesItem(id: UUID(), categoryName: "All"),
-//    CategoriesItem(id: UUID(), categoryName: "Category 2"),
-//    CategoriesItem(id: UUID(), categoryName: "Category 2"),
-//    CategoriesItem(id: UUID(), categoryName: "Category 2"),
-//    CategoriesItem(id: UUID(), categoryName: "Category 2"),
-//    CategoriesItem(id: UUID(), categoryName: "Category 2"),
-//    CategoriesItem(id: UUID(), categoryName: "Category 2"),
-//    CategoriesItem(id: UUID(), categoryName: "Category 2")
-//]

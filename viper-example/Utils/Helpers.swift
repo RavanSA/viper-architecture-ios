@@ -24,9 +24,7 @@ func changeSafeAreaBackgroundColor(to color: UIColor, for view: UIView) {
 func showActivityIndicator(on parentView: UIView) {
     let  indicatorStyle: UIActivityIndicatorView.Style = .medium
     let  activityIndicator : UIActivityIndicatorView =   UIActivityIndicatorView(style: indicatorStyle)
-    
-//    let activityIndicator = UIActivityIndicatorView(style: .UIActivityIndicatorView.Style.medium)
-    
+        
     activityIndicator.startAnimating()
     activityIndicator.translatesAutoresizingMaskIntoConstraints = false
 

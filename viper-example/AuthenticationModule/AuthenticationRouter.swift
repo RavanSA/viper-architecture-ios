@@ -26,32 +26,28 @@ class AuthenticationRouter: AuthenticationRouterProtocol {
 
     func routeToMain() {
         setupBottomBar()
-//        let productsVC = ProductsViewController(nibName: "ProductsViewController", bundle: nil)
-//        view?.navigationController?.pushViewController(productsVC, animated: true)
     }
     
     func setupBottomBar() {
         let tabBarVC = UITabBarController()
         let vc1 = UINavigationController(rootViewController: ProductsViewController())
         let vc2 = UINavigationController(rootViewController: SearchViewController())
-        let vc3 = UINavigationController(rootViewController: ThirdViewController())
-        //           let vc3 = UINavigationController(rootViewController: ThirdViewController())
-
-
+        let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+        let vc3 = storyboard.instantiateViewController(withIdentifier: "settingsVC")
+        
         vc1.title = "Home"
         vc2.title = "Search"
-        vc3.title = "About"
+        vc3.title = "Settings"
 
 
         tabBarVC.setViewControllers([vc1, vc2, vc3], animated: false)
 
         let items = tabBarVC.tabBar.items
 
-        let images = ["house","gear","person.circle"]
+        let images = ["house","magnifyingglass","gear"]
 
         for item in 0..<items!.count {
             items![item].image = UIImage(systemName: images[item])
-//            items![item].badgeValue = String(item+1)
         }
 
         tabBarVC.modalPresentationStyle = .fullScreen
