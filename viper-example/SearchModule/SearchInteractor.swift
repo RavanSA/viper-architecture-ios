@@ -20,7 +20,7 @@ class SearchInteractor: SearchInteractorProtocol {
     }
     
     func didFetchCategories() {
-        NetworkManager.shared.fetch("products/categories", parameter: CategoriesRequest(), httpMethos: "GET", onSuccess: { (response: [String]) in
+        NetworkManager.shared.fetch("products/categories", parameter: CategoriesRequest(), httpMethod: "GET", onSuccess: { (response: [String]) in
             var categories = response
             categories.insert("All", at: 0)
             self.presenter?.onFetchCategoriesSucces(response: categories)

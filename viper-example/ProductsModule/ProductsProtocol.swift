@@ -8,12 +8,12 @@
 import Foundation
 
 protocol ProductsInteractorProtocol {
-    func didFetchProducts()
+    func didFetchProducts(request: ProductsDTORequest)
 }
 
 protocol ProductsPresenterProtocol: AnyObject {
-    func onFetchProductsSucces(response: ProductsDTO)
-    func onFetchProductsFailed()
+    @discardableResult func onFetchProductsSucces(response: ProductsDTO) -> Bool
+    @discardableResult func onFetchProductsFailed() -> Bool
     func routeToProductDetail()
     func fetchProducts()
     func routeToBasket()

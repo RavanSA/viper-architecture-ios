@@ -13,7 +13,10 @@ class ProductsRouter : ProductsRouterProtocol {
     weak var view: UIViewController?
     
     static func createModule(vc: ProductsViewController) {
-        let interactor = ProductsInteractor()
+        
+        let viewContext = PersistenceController.shared.viewContext
+        let persistentContainer = PersistenceController.shared
+        let interactor = ProductsInteractor(viewContext: viewContext, persistentContainer: persistentContainer)
         let presenter = ProductsPresenter()
         let router = ProductsRouter()
 

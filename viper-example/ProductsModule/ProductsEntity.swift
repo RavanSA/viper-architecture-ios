@@ -50,3 +50,4 @@ struct Rating: Codable {
 }
 
 typealias ProductsDTO = [ProductsDTOElement]
+

@@ -15,7 +15,7 @@ class ProductDetailInteractor : ProductDetailInteractorProtocol {
     let persistentContainer = PersistenceController.shared
     
     func didFetchProductDetail(productID id : Int?) {
-        NetworkManager.shared.fetch("products/\(id ?? 0)", parameter: ProductDetailDTORequest(), httpMethos: "GET", onSuccess: { (response: ProductDetailResponse) in
+        NetworkManager.shared.fetch("products/\(id ?? 0)", parameter: ProductDetailDTORequest(), httpMethod: "GET", onSuccess: { (response: ProductDetailResponse) in
             self.presenter?.onFetchProductDetailSucces(response: response)
         }, onFailed: { errorMsg in
             self.presenter?.onFetchProductDetailFailed(errorMsg: errorMsg)

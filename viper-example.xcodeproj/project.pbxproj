@@ -23,6 +23,12 @@
 		C919A2172AA3E27000BCF7F5 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919A2162AA3E27000BCF7F5 /* AuthenticationViewController.swift */; };
 		C919A2192AA4B42400BCF7F5 /* AuthenticationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919A2182AA4B42400BCF7F5 /* AuthenticationProtocol.swift */; };
 		C919A21B2AA4C40800BCF7F5 /* AuthenticationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919A21A2AA4C40800BCF7F5 /* AuthenticationEntity.swift */; };
+		C923B8952B9E1593003CCB16 /* ProductsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923B8942B9E1593003CCB16 /* ProductsInteractorTests.swift */; };
+		C923B8982B9E17A0003CCB16 /* MockProductsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923B8972B9E17A0003CCB16 /* MockProductsPresenter.swift */; };
+		C923B89B2B9E1839003CCB16 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923B89A2B9E1839003CCB16 /* MockNetworkManager.swift */; };
+		C947FF412B9E331900478CD1 /* PersistentControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947FF402B9E331900478CD1 /* PersistentControllerTest.swift */; };
+		C947FF432B9E347900478CD1 /* MockProductsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947FF422B9E347900478CD1 /* MockProductsDTO.swift */; };
+		C947FF452B9E389000478CD1 /* MockManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947FF442B9E389000478CD1 /* MockManagedObjectContext.swift */; };
 		C94B04802AEC440A00DF2D60 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B047E2AEC440A00DF2D60 /* ProductsViewController.swift */; };
 		C94B04812AEC440A00DF2D60 /* ProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94B047F2AEC440A00DF2D60 /* ProductsViewController.xib */; };
 		C94B04832AEC442A00DF2D60 /* ProductsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B04822AEC442A00DF2D60 /* ProductsPresenter.swift */; };
@@ -126,6 +132,12 @@
 		C919A2162AA3E27000BCF7F5 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		C919A2182AA4B42400BCF7F5 /* AuthenticationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocol.swift; sourceTree = "<group>"; };
 		C919A21A2AA4C40800BCF7F5 /* AuthenticationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEntity.swift; sourceTree = "<group>"; };
+		C923B8942B9E1593003CCB16 /* ProductsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsInteractorTests.swift; sourceTree = "<group>"; };
+		C923B8972B9E17A0003CCB16 /* MockProductsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProductsPresenter.swift; sourceTree = "<group>"; };
+		C923B89A2B9E1839003CCB16 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		C947FF402B9E331900478CD1 /* PersistentControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentControllerTest.swift; sourceTree = "<group>"; };
+		C947FF422B9E347900478CD1 /* MockProductsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProductsDTO.swift; sourceTree = "<group>"; };
+		C947FF442B9E389000478CD1 /* MockManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockManagedObjectContext.swift; sourceTree = "<group>"; };
 		C94B047E2AEC440A00DF2D60 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		C94B047F2AEC440A00DF2D60 /* ProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsViewController.xib; sourceTree = "<group>"; };
 		C94B04822AEC442A00DF2D60 /* ProductsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPresenter.swift; sourceTree = "<group>"; };
@@ -285,6 +297,42 @@
 			path = AuthenticationModule;
 			sourceTree = "<group>";
 		};
+		C923B8932B9E1335003CCB16 /* ProductsModule */ = {
+			isa = PBXGroup;
+			children = (
+				C923B8962B9E174F003CCB16 /* Mocks */,
+				C923B8942B9E1593003CCB16 /* ProductsInteractorTests.swift */,
+			);
+			path = ProductsModule;
+			sourceTree = "<group>";
+		};
+		C923B8962B9E174F003CCB16 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C923B8972B9E17A0003CCB16 /* MockProductsPresenter.swift */,
+				C947FF422B9E347900478CD1 /* MockProductsDTO.swift */,
+				C947FF442B9E389000478CD1 /* MockManagedObjectContext.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C923B8992B9E182D003CCB16 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C947FF3F2B9E32FD00478CD1 /* Mock */,
+				C947FF402B9E331900478CD1 /* PersistentControllerTest.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C947FF3F2B9E32FD00478CD1 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				C923B89A2B9E1839003CCB16 /* MockNetworkManager.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		C94B047D2AEC43BF00DF2D60 /* ProductsModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +448,8 @@
 		C98F999B2A9E78A500ADDE12 /* viper-exampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				C923B8992B9E182D003CCB16 /* Common */,
+				C923B8932B9E1335003CCB16 /* ProductsModule */,
 				C98F999C2A9E78A500ADDE12 /* viper_exampleTests.swift */,
 			);
 			path = "viper-exampleTests";
@@ -844,7 +894,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C923B8982B9E17A0003CCB16 /* MockProductsPresenter.swift in Sources */,
+				C947FF452B9E389000478CD1 /* MockManagedObjectContext.swift in Sources */,
+				C923B8952B9E1593003CCB16 /* ProductsInteractorTests.swift in Sources */,
+				C947FF412B9E331900478CD1 /* PersistentControllerTest.swift in Sources */,
+				C923B89B2B9E1839003CCB16 /* MockNetworkManager.swift in Sources */,
 				C98F999D2A9E78A500ADDE12 /* viper_exampleTests.swift in Sources */,
+				C947FF432B9E347900478CD1 /* MockProductsDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

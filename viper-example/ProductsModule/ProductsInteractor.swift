@@ -6,15 +6,26 @@
 //
 
 import Foundation
+import CoreData
 
 class ProductsInteractor : ProductsInteractorProtocol {
     
     var presenter: ProductsPresenterProtocol?
-    let viewContext = PersistenceController.shared.viewContext
-    let persistentContainer = PersistenceController.shared
+    var viewContext: NSManagedObjectContext
+    let persistentContainer: PersistenceController
+    let networkManager: NetworkManagerProtocol
+
+    init(networkManager: NetworkManagerProtocol = NetworkManager.shared,
+        viewContext: NSManagedObjectContext = PersistenceController.shared.viewContext,
+         persistentContainer: PersistenceController = PersistenceController.shared) {
+        self.viewContext = viewContext
+        self.persistentContainer = persistentContainer
+        self.networkManager = networkManager
+    }
+
     
-    func didFetchProducts() {
-        NetworkManager.shared.fetch("products", parameter: ProductsDTORequest(), httpMethos: "GET", onSuccess: { (response: ProductsDTO) in
+    func didFetchProducts(request: ProductsDTORequest) {
+        networkManager.fetch("products", parameter: request, httpMethod: "GET", onSuccess: { (response: ProductsDTO) in
             self.persistentContainer.deleteAll(data: ProductsEntity.self)
             self.addProductsToCache(response: response)
             self.presenter?.onFetchProductsSucces(response: response)
@@ -23,7 +34,7 @@ class ProductsInteractor : ProductsInteractorProtocol {
         })
     }
     
-    private func addProductsToCache(response: ProductsDTO) {
+    func addProductsToCache(response: ProductsDTO) {
         response.forEach { product in
             
             do {
@@ -43,6 +54,10 @@ class ProductsInteractor : ProductsInteractorProtocol {
                 print("Error Occured", error)
             }
         }
+    }
+    
+    func setViewContext(_ context: NSManagedObjectContext) {
+        viewContext = context
     }
     
 }

@@ -7,11 +7,22 @@
 
 import Foundation
 
-final public class NetworkManager: NSObject {
+protocol NetworkManagerProtocol {
+    
+    func fetch<T1: Encodable, T2: Decodable>(_ method: String!,
+                                              parameter: T1,
+                                              httpMethod type: String,
+                                              onSuccess: ((T2) -> Void)?,
+                                              onFailed: ((String) -> Void)?)
+}
+
+
+
+final public class NetworkManager: NSObject, NetworkManagerProtocol {
     
     public static let shared: NetworkManager = NetworkManager()
     
-    public func fetch<T1: Encodable, T2: Decodable>(_ method: String!, parameter: T1, httpMethos type: String, onSuccess: ((T2) -> Void)? = nil, onFailed: ((String) -> Void)? = nil) {
+    public func fetch<T1: Encodable, T2: Decodable>(_ method: String!, parameter: T1, httpMethod type: String, onSuccess: ((T2) -> Void)? = nil, onFailed: ((String) -> Void)? = nil) {
         
         let webService = EndPoints.BASE_URL
         

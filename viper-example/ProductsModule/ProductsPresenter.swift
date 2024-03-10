@@ -13,12 +13,14 @@ class ProductsPresenter : ProductsPresenterProtocol {
     var router: ProductsRouterProtocol?
     var interactor: ProductsInteractorProtocol?
     
-    func onFetchProductsSucces(response: ProductsDTO) {
+    func onFetchProductsSucces(response: ProductsDTO) -> Bool{
         view?.fetchedProductsSuccesfully(response: response)
+        return true
     }
     
-    func onFetchProductsFailed() {
+    func onFetchProductsFailed() -> Bool {
         view?.fetchedProductsFailed()
+        return true
     }
     
     func routeToProductDetail() {
@@ -30,7 +32,7 @@ class ProductsPresenter : ProductsPresenterProtocol {
     }
     
     func fetchProducts() {
-        interactor?.didFetchProducts()
+        interactor?.didFetchProducts(request: ProductsDTORequest())
     }
     
 }
